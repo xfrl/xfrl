@@ -164,6 +164,8 @@
             
               <a href="/xfrl/friends" class="drawer-menu-item-link">
                 
+                  <i class="fa fa-child" aria-hidden="true"></i>
+                
                 <span class="name">Friends</span>
               </a>
             
@@ -194,7 +196,7 @@
                 <li>
                   <a target="_blank" rel="noopener" href="https://www.tongwy.top/Docsnote/#/">
                     
-                    <i class="fa fa-film" style="margin-top: -20px;"></i>
+                    <i class="fa fa-book" style="margin-top: -20px;"></i>
                     
                     <span>Docsnote</span>
                   </a>
@@ -212,7 +214,7 @@
                 <li>
                   <a target="_blank" rel="noopener" href="https://chrismckenzie.com/">
                     
-                    <i class="fa fa-film" style="margin-top: -20px;"></i>
+                    <i class="fa fa-diamond" style="margin-top: -20px;"></i>
                     
                     <span>Pink block</span>
                   </a>
@@ -349,6 +351,8 @@
             
               <a href="/xfrl/friends" class="menu-item-link">
                 
+                  <i class="fa fa-child" aria-hidden="true"></i>
+                
                 <span class="name">Friends</span>
               </a>
             
@@ -377,7 +381,7 @@
                 <li>
                   <a target="_blank" rel="noopener" href="https://www.tongwy.top/Docsnote/#/">
                     
-                    <i class="fa fa-film" style="margin-top: -20px;"></i>
+                    <i class="fa fa-book" style="margin-top: -20px;"></i>
                     
                     <span>Docsnote</span>
                   </a>
@@ -395,7 +399,7 @@
                 <li>
                   <a target="_blank" rel="noopener" href="https://chrismckenzie.com/">
                     
-                    <i class="fa fa-film" style="margin-top: -20px;"></i>
+                    <i class="fa fa-diamond" style="margin-top: -20px;"></i>
                     
                     <span>Pink block</span>
                   </a>
@@ -644,7 +648,7 @@
             clearInterval(this.time);
         },
         mounted() {
-            let prop = ''|| 'https://pic4.zhimg.com/80/v2-5030587bac1b856d09e0a119ff6d7c04_1440w.jpg,https://api.btstu.cn/sjbz/api.php';
+            let prop = ''|| 'https://img14.360buyimg.com/ddimg/jfs/t1/190732/25/8327/1149679/60c8299cEa054f2c0/5510581f81e14027.jpg,https://img10.360buyimg.com/ddimg/jfs/t1/189079/2/8393/699206/60c8299aE61231bbc/4ac69f618b91f39e.jpg';
             let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://') 
             if (isImg) {
                 let img = prop.split(',');
@@ -925,7 +929,7 @@
 			verify: false,
 			app_id: "i8J3pLRo43TzHmLDc3kgLCaz-gzGzoHsz",
 			app_key: "EzMDpzGFXtbEuD7kxGfgQrse",
-			placeholder: "客官，说点什么吧",
+			placeholder: "说点什么吧",
 			avatar: "",
 			master: "",   //博主邮箱md5
 			tagMeta: ["博主","小伙伴","访客"],     //标识字段名
@@ -1622,7 +1626,7 @@
 			}
 		}
 		//查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
-		let themeDanmu = eval('false');
+		let themeDanmu = eval('true');
 		let themeLoop = eval('false');
 		let themeLooperTime = '5000' || 5000;
 		let speed = '20' || 20;
@@ -1920,10 +1924,8 @@
     
     <!-- 爱心点击 -->
     
-      
-        <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
-        <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-        <script src="/xfrl/js/cursor/explosion.min.js"></script>
+       
+        <script src="/xfrl/js/cursor/clicklove.js"></script> 
       
     
 
