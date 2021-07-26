@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>MySQL基础 | xfrl&#39;s blog</title>
+  <title>maven教学资料 | xfrl&#39;s blog</title>
 
   
     
@@ -697,7 +697,7 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="https://img13.360buyimg.com/ddimg/jfs/t1/178725/11/10755/4015178/60d2bc5fE20499e82/76b81e86be59960a.png" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/xfrl/medias/2.jpg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
@@ -708,7 +708,7 @@
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
           <script>
             var typed = new Typed("#post-detail-header-title", {
-              strings: ['MySQL基础'],
+              strings: ['maven教学资料'],
               startDelay: 100,
               typeSpeed: 100,
               loop: false,
@@ -733,7 +733,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2020-10-02</span>
+        <span class="post-time">2021-06-15</span>
       </div>
       
       <div class="post-tags-categories">
@@ -741,8 +741,8 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/xfrl/tags/SQL/" class="">
-              SQL
+            <a href="/xfrl/tags/Maven/" class="">
+              Maven
             </a>
           
         </div>
@@ -751,116 +751,1343 @@
         <div class="categories">
           <i class="iconfont iconbookmark1"></i>
           
-            <a href="/xfrl/categories/MySQL/" class="">
-              MySQL
+            <a href="/xfrl/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" class="">
+              项目管理
             </a>
           
         </div>
         
       </div>
       <div class="post-content">
-        <h1 id="MySQL-使用终端操作数据库"><a href="#MySQL-使用终端操作数据库" class="headerlink" title="MySQL-使用终端操作数据库"></a>MySQL-使用终端操作数据库</h1><p>1.如何查看有什么数据库?</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> databases;</span><br></pre></td></tr></table></figure>
-<p>2.如何选择数据库?  </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use databasesName;</span><br></pre></td></tr></table></figure>
-
-<p>3.如何查看该数据库中有哪些表?</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> tables;</span><br></pre></td></tr></table></figure>
-
-<p>4.如何查询表中的数据?</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> tableName;</span><br></pre></td></tr></table></figure>
-<p>5.如何退出数据库服务器?</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit;</span><br></pre></td></tr></table></figure>
-
-<p>6.如何在数据库服务器中创建自己的数据库?   </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> database databaseName;</span><br></pre></td></tr></table></figure>
-
-<p>7.如何创建一个数据表? 创建一个pet表</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">TABLE</span> pet(</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">    owner <span class="type">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">    specise <span class="type">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">    sex <span class="type">CHAR</span>(<span class="number">1</span>),</span><br><span class="line">    brith DATAE,</span><br><span class="line">    death <span class="type">DATE</span> </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意事项:</p>
-</blockquote>
-<ul>
-<li><p>1:var()与varchar()的区别在于var()是定常的,哪怕存储的字符串没有达到”()”中数字的上限,var()依然会占用空格来填充空间.而varchar()则是不定长的,没有达到”()”中的上限则会自动去掉后面的空格;</p>
-</li>
-<li><p>2:性别不要用:sex 要用:gender  一个是性 一个是性别;</p>
-</li>
-<li><p>3:定义最后一个字段的时候不要加”,”;</p>
-</li>
-<li><p>4:上面的”VAR”,”VARCHAR”,”DATE”可以用小写.不过最好用大写来表示区分关键字,若不然也许写到后面你自己都不知道这个词是数据库中的关键字还是你自己自定义的一些数据,同时一定要用英文的标点符号也必须半角输入</p>
-</li>
-</ul>
-<p>8.如何查看数据表的架构?   </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">describe</span> tableName;</span><br><span class="line"> 说明:</span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line"><span class="operator">|</span> Field <span class="operator">|</span> Type        <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>Field    :    字段的名称</p>
-</li>
-<li><p>Type     :    字段的类型,可以有int</p>
-</li>
-<li><p>var    varchar</p>
-</li>
-<li><p>Key      :    是否是关键字 如可以定义为:  primary key 或者 unique key</p>
-</li>
-<li><p>Default: :    若是该字段没有主动设置值的时候,该字段的默认值是什么?</p>
-</li>
-</ul>
-<p>9.如何插入数据?</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> pet <span class="keyword">VALUES</span>(<span class="string">&#x27;kk&#x27;</span>,<span class="string">&#x27;cc&#x27;</span>,<span class="string">&#x27;dog&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;1998-8-2&#x27;</span>,<span class="keyword">null</span>);</span><br></pre></td></tr></table></figure>
-
-<pre><code>       +------+-------+---------+------+------------+-------+
-       | name | owner | specise | sex     | brith           | death |
-       +------+-------+---------+------+------------+-------+
-       | kk       | cc       | dog      | 1        | 1998-08-02 | NULL|
-       +------+-------+---------+------+------------+-------+
-</code></pre>
-<blockquote>
-<p>注意:<br>NULL:代表的是空,表示该字段还没有数据.千万不要主动填写’NULL’,这代表你的字段有一个值叫做’null’.</p>
-</blockquote>
-<p>其实还有一种写法:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> pet(name,owner) <span class="keyword">VALUES</span> (<span class="string">&#x27;xx&#x27;</span>,<span class="string">&#x27;cc&#x27;</span>);</span><br><span class="line">代表我只在name和owner字段上面插入的一条,其他皆为<span class="keyword">NULL</span><span class="operator">/</span>默认值的数据</span><br></pre></td></tr></table></figure>
-
-<p>10.mysql 常用数据类型</p>
-<p>注意:金钱最好用int/bigint(整数,单位用分,拿出来进行*100换成元),千万不要直接用浮点,会有精度损失.</p>
-<p>11.如何删除数据</p>
-<p>先插入数据:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> pet <span class="keyword">VALUES</span>(<span class="string">&#x27;kk1&#x27;</span>,<span class="string">&#x27;cc1&#x27;</span>,<span class="string">&#x27;dog1&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;1998-1-2&#x27;</span>,<span class="keyword">null</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> pet <span class="keyword">VALUES</span>(<span class="string">&#x27;kk2&#x27;</span>,<span class="string">&#x27;cc2&#x27;</span>,<span class="string">&#x27;dog2&#x27;</span>,<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;1998-2-2&#x27;</span>,<span class="keyword">null</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> pet <span class="keyword">VALUES</span>(<span class="string">&#x27;kk3&#x27;</span>,<span class="string">&#x27;cc3&#x27;</span>,<span class="string">&#x27;dog3&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;1998-3-2&#x27;</span>,<span class="string">&#x27;1998-12-2&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> pet <span class="keyword">VALUES</span>(<span class="string">&#x27;kk4&#x27;</span>,<span class="string">&#x27;cc4&#x27;</span>,<span class="string">&#x27;dog4&#x27;</span>,<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;1998-4-2&#x27;</span>,<span class="keyword">null</span>);</span><br></pre></td></tr></table></figure>
-
-<p>删除语句:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> tablesName WHRER 条件;</span><br></pre></td></tr></table></figure>
-
-<p>修改数据:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE tableName <span class="keyword">SET</span> 字段<span class="number">1</span><span class="operator">=</span>值<span class="number">1</span>,字段<span class="number">2</span><span class="operator">=</span>值<span class="number">2</span> ... <span class="keyword">WHERE</span> 条件;</span><br></pre></td></tr></table></figure>
-
-<p>12.mysql建表中的约束</p>
-<p>1.主键约束:</p>
-<p>它能够唯一确定一张表中的一条记录,增加主键约束之后,就可以使得字段不重复而且不为空</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">user</span>(</span><br><span class="line">    id <span class="type">int</span> <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">20</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">user</span> <span class="keyword">VALUES</span> (<span class="number">1</span>,<span class="string">&#x27;张三&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line"><span class="operator">|</span> id <span class="operator">|</span> name <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">1</span> <span class="operator">|</span> 张三 <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line"></span><br><span class="line">运行<span class="keyword">DESCRIBE</span> <span class="keyword">user</span>;</span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line"><span class="operator">|</span> Field <span class="operator">|</span> Type        <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line"><span class="operator">|</span> id    <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> PRI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> name  <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line">发现 id是不可以为<span class="keyword">null</span> 而且 key的值 也变为:PRI(<span class="keyword">primary</span>)</span><br></pre></td></tr></table></figure>
-
-<p>2.复合主键:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> user2(</span><br><span class="line">    id <span class="type">INT</span>,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">    password <span class="type">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">    <span class="keyword">PRIMARY</span> key(id,name)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">运行<span class="keyword">DESCRIBE</span> user2;</span><br><span class="line"><span class="operator">+</span><span class="comment">----------+-------------+------+-----+---------+-------+</span></span><br><span class="line"><span class="operator">|</span> Field    <span class="operator">|</span> Type        <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----------+-------------+------+-----+---------+-------+</span></span><br><span class="line"><span class="operator">|</span> id       <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> PRI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> name     <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> PRI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> password <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----------+-------------+------+-----+---------+-------+</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user2 <span class="keyword">VALUES</span> (<span class="number">1</span>,<span class="string">&#x27;老王&#x27;</span>,<span class="string">&#x27;123456&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user2 <span class="keyword">VALUES</span> (<span class="number">2</span>,<span class="string">&#x27;老王&#x27;</span>,<span class="string">&#x27;123456&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+----------+</span></span><br><span class="line"><span class="operator">|</span> id <span class="operator">|</span> name <span class="operator">|</span> password <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+----------+</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">1</span> <span class="operator">|</span> 老王 <span class="operator">|</span> <span class="number">123456</span>   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">2</span> <span class="operator">|</span> 老王 <span class="operator">|</span> <span class="number">123456</span>   <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+----------+</span></span><br></pre></td></tr></table></figure>
-
-<p>说明了复合主键只要所有的字段都不是相同的情况下可以允许其中的字段重复:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user2 <span class="keyword">VALUES</span> (<span class="number">1</span>,<span class="string">&#x27;老李&#x27;</span>,<span class="string">&#x27;123456&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> user2;</span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+----------+</span></span><br><span class="line"><span class="operator">|</span> id <span class="operator">|</span> name <span class="operator">|</span> password <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+----------+</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">1</span> <span class="operator">|</span> 老李 <span class="operator">|</span> <span class="number">123456</span>   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">1</span> <span class="operator">|</span> 老王 <span class="operator">|</span> <span class="number">123456</span>   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">2</span> <span class="operator">|</span> 老王 <span class="operator">|</span> <span class="number">123456</span>   <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+----------+</span></span><br><span class="line">场景:表中有班级号以及学生座位号,我们可以用班级号<span class="operator">+</span>学生的座位号可以准确的定位一个学生,如:(<span class="number">1</span>班<span class="number">5</span>号可以准确的确定一个学生)</span><br></pre></td></tr></table></figure>
-
-<p>3.自增约束:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> user3(</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY AUTO_INCREMENT,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">20</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">运行<span class="keyword">DESCRIBE</span> user3;</span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> Field <span class="operator">|</span> Type        <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra          <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> id    <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> PRI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span> auto_increment <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> name  <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>                <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user3(name) <span class="keyword">VALUES</span>(<span class="string">&#x27;张三&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user3(name) <span class="keyword">VALUES</span>(<span class="string">&#x27;李四&#x27;</span>);</span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line"><span class="operator">|</span> id <span class="operator">|</span> name <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">1</span> <span class="operator">|</span> 张三 <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">2</span> <span class="operator">|</span> 李四 <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line">没有自定义id值 但是自动生成了id</span><br></pre></td></tr></table></figure>
-
-<p>4.唯一约束:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> user5(</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY AUTO_INCREMENT,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">20</span>)</span><br><span class="line">);</span><br><span class="line">运行 <span class="keyword">DESCRIBE</span> user5;</span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> Field <span class="operator">|</span> Type        <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra          <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> id    <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> PRI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span> auto_increment <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> name  <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>                <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"></span><br><span class="line">新增name为唯一约束:</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user5 <span class="keyword">ADD</span> <span class="keyword">UNIQUE</span>(name);</span><br><span class="line">运行 <span class="keyword">DESCRIBE</span> user5;</span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> Field <span class="operator">|</span> Type        <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra          <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> id    <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> PRI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span> auto_increment <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> name  <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> YES  <span class="operator">|</span> UNI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>                <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+----------------+</span></span><br><span class="line">测试:插入数据</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user5(name) <span class="keyword">VALUES</span> (<span class="string">&#x27;cc&#x27;</span>);</span><br><span class="line">运行 <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> user5; 查看结果:</span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line"><span class="operator">|</span> id <span class="operator">|</span> name <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">1</span> <span class="operator">|</span> cc   <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line">再次插入<span class="keyword">INSERT</span> <span class="keyword">INTO</span> user5(name) <span class="keyword">VALUES</span> (<span class="string">&#x27;cc&#x27;</span>);</span><br><span class="line">出现:ERROR <span class="number">1062</span> (<span class="number">23000</span>): Duplicate entry <span class="string">&#x27;cc&#x27;</span> <span class="keyword">for</span> key <span class="string">&#x27;name&#x27;</span></span><br><span class="line"></span><br><span class="line">换个试试 <span class="keyword">INSERT</span> <span class="keyword">INTO</span> user5(name) <span class="keyword">VALUES</span> (<span class="string">&#x27;aa&#x27;</span>);</span><br><span class="line">运行 <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> user5; 查看结果:</span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line"><span class="operator">|</span> id <span class="operator">|</span> name <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">3</span> <span class="operator">|</span> aa   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">1</span> <span class="operator">|</span> cc   <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line">总结一下:</span><br><span class="line">    主键约束(<span class="keyword">primary</span> key)中包含了唯一约束</span><br><span class="line">场景:业务需求:设计一张用户注册表,用户姓名必须要用手机号来注册,而且手机号和用户名称都不能为空,那么:</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> user_test(</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY AUTO_INCREMENT COMMENT<span class="string">&#x27;主键id&#x27;</span>,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT<span class="string">&#x27;用户姓名,不能为空&#x27;</span>,</span><br><span class="line">    phone_number <span class="type">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">UNIQUE</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT<span class="string">&#x27;用户手机,不能重复且不能为空&#x27;</span></span><br><span class="line">);</span><br><span class="line">运行 <span class="keyword">DESCRIBE</span> user_test;</span><br><span class="line"><span class="operator">+</span><span class="comment">--------------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> Field        <span class="operator">|</span> Type        <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra          <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> id           <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> PRI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span> auto_increment <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> name         <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>                <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> phone_number <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> UNI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>                <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------+-------------+------+-----+---------+----------------+</span></span><br><span class="line">这样的话就达到了每一个手机号都只能出现一次,达到了每个手机号只能被注册一次.</span><br><span class="line">用户姓名可以重复,但是手机号码却不能重复,复合正常的逻辑需求</span><br></pre></td></tr></table></figure>
-
-<p>5.非空约束:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">name和phone_number都设置了非空,先只设置name参数不设置phone_number参数试一试</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user_test (name) <span class="keyword">VALUES</span> (<span class="string">&#x27;张三&#x27;</span>);</span><br><span class="line">会出现Field <span class="string">&#x27;phone_number&#x27;</span> doesn<span class="string">&#x27;t have a default value</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">两个非空参数一起设置:</span></span><br><span class="line"><span class="string">INSERT INTO user_test (name,phone_number) VALUES (&#x27;</span>张三<span class="string">&#x27;,&#x27;</span><span class="number">12345678901</span><span class="string">&#x27;);</span></span><br><span class="line"><span class="string">+----+------+--------------+</span></span><br><span class="line"><span class="string">| id | name | phone_number |</span></span><br><span class="line"><span class="string">+----+------+--------------+</span></span><br><span class="line"><span class="string">|  1 | 张三 | 12345678901  |</span></span><br><span class="line"><span class="string">+----+------+--------------+</span></span><br></pre></td></tr></table></figure>
-
-<p>6.默认约束</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> user6(</span><br><span class="line">   id <span class="type">int</span> <span class="keyword">PRIMARY</span> KEY AUTO_INCREMENT COMMENT<span class="string">&#x27;主键id&#x27;</span>,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT<span class="string">&#x27;用户姓名不能为空&#x27;</span>,</span><br><span class="line">    phone_number <span class="type">VARCHAR</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span> COMMENT<span class="string">&#x27;用户手机号,不能为空&#x27;</span>,</span><br><span class="line">    status <span class="type">INT</span> <span class="keyword">DEFAULT</span> <span class="number">0</span> COMMENT<span class="string">&#x27;用户状态0:启用 1:禁封 默认:0&#x27;</span></span><br><span class="line">);</span><br><span class="line">运行<span class="keyword">DESCRIBE</span> user6;</span><br><span class="line"><span class="operator">+</span><span class="comment">--------------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> Field        <span class="operator">|</span> Type        <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra          <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> id           <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> PRI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span> auto_increment <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> name         <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>                <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> phone_number <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>                <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> status       <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="number">0</span>       <span class="operator">|</span>                <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------+-------------+------+-----+---------+----------------+</span></span><br><span class="line">插入数据:</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user6(name,phone_number) <span class="keyword">VALUES</span> (<span class="string">&#x27;aa&#x27;</span>,<span class="string">&#x27;123&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user6(name,phone_number) <span class="keyword">VALUES</span>(<span class="string">&#x27;bb&#x27;</span>,<span class="string">&#x27;1234&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user6(name,phone_number) <span class="keyword">VALUES</span>(<span class="string">&#x27;cc&#x27;</span>,<span class="string">&#x27;1263456&#x27;</span>);</span><br><span class="line"></span><br><span class="line">查看数据:<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> user6;</span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+--------------+--------+</span></span><br><span class="line"><span class="operator">|</span> id <span class="operator">|</span> name <span class="operator">|</span> phone_number <span class="operator">|</span> status <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+--------------+--------+</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">1</span> <span class="operator">|</span> aa   <span class="operator">|</span> <span class="number">123</span>          <span class="operator">|</span>      <span class="number">0</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">2</span> <span class="operator">|</span> bb   <span class="operator">|</span> <span class="number">1234</span>         <span class="operator">|</span>      <span class="number">0</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">3</span> <span class="operator">|</span> cc   <span class="operator">|</span> <span class="number">1263456</span>      <span class="operator">|</span>      <span class="number">0</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+--------------+--------+</span></span><br><span class="line">我们没有设置status的值,但是给我们创建了默认值 <span class="number">0.</span></span><br><span class="line"></span><br><span class="line">应用场景:</span><br><span class="line">业务需求:找正常的用户,对这些正常用户进行发放优惠卷或者积分之类的东西,而被禁封的用户我们不让其参加多动.</span><br><span class="line">我们想要封用户只要将status的值从<span class="number">0</span>改为<span class="number">1</span>就行了,当然我们取用户的时候必须要先判断status是否是<span class="number">0.</span>若是<span class="number">1.</span>说明该用户已经被禁封.</span><br><span class="line">先封手机号为<span class="string">&#x27;1234&#x27;</span>的用户:</span><br><span class="line">UPDATE user6 <span class="keyword">SET</span> status <span class="operator">=</span> <span class="number">1</span> <span class="keyword">WHERE</span> phone_number<span class="operator">=</span> <span class="string">&#x27;1234&#x27;</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> user6;</span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+--------------+--------+</span></span><br><span class="line"><span class="operator">|</span> id <span class="operator">|</span> name <span class="operator">|</span> phone_number <span class="operator">|</span> status <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+--------------+--------+</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">1</span> <span class="operator">|</span> aa   <span class="operator">|</span> <span class="number">123</span>          <span class="operator">|</span>      <span class="number">0</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">2</span> <span class="operator">|</span> bb   <span class="operator">|</span> <span class="number">1234</span>         <span class="operator">|</span>      <span class="number">1</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">3</span> <span class="operator">|</span> cc   <span class="operator">|</span> <span class="number">1263456</span>      <span class="operator">|</span>      <span class="number">0</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+--------------+--------+</span></span><br><span class="line">status为<span class="number">1</span>,说明用户已经被封,该用户不可以参加活动</span><br><span class="line"></span><br><span class="line">我们取用户的时候加上status的判断,如:</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> user6 <span class="keyword">WHERE</span> status <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+--------------+--------+</span></span><br><span class="line"><span class="operator">|</span> id <span class="operator">|</span> name <span class="operator">|</span> phone_number <span class="operator">|</span> status <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+--------------+--------+</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">1</span> <span class="operator">|</span> aa   <span class="operator">|</span> <span class="number">123</span>          <span class="operator">|</span>      <span class="number">0</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">3</span> <span class="operator">|</span> cc   <span class="operator">|</span> <span class="number">1263456</span>      <span class="operator">|</span>      <span class="number">0</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+--------------+--------+</span></span><br></pre></td></tr></table></figure>
-
-<p>7.外键约束</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> classes(</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY AUTO_INCREMENT COMMENT<span class="string">&#x27;班级表id&#x27;</span>,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">20</span>) COMMENT<span class="string">&#x27;班级名称&#x27;</span></span><br><span class="line">);</span><br><span class="line">运行<span class="keyword">DESCRIBE</span> classes;</span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> Field <span class="operator">|</span> Type        <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra          <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> id    <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> PRI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span> auto_increment <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> name  <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>                <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student(</span><br><span class="line">   id <span class="type">INT</span> <span class="keyword">PRIMARY</span> KEY AUTO_INCREMENT COMMENT<span class="string">&#x27;学生表id&#x27;</span>,</span><br><span class="line">   name <span class="type">VARCHAR</span>(<span class="number">20</span>) COMMENT<span class="string">&#x27;学生姓名&#x27;</span>,</span><br><span class="line">    class_id <span class="type">int</span> COMMENT<span class="string">&#x27;教室id,这张表中的class_id是classes表中id的值&#x27;</span>,</span><br><span class="line">    <span class="keyword">FOREIGN</span> KEY (class_id) <span class="keyword">REFERENCES</span> classes(id)</span><br><span class="line">);</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span><span class="keyword">FOREIGN</span> :外来  <span class="keyword">REFERENCES</span>:应用,参考</span><br><span class="line">运行<span class="keyword">DESCRIBE</span> student;</span><br><span class="line"><span class="operator">+</span><span class="comment">----------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> Field    <span class="operator">|</span> Type        <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra          <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> id       <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> PRI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span> auto_increment <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> name     <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>                <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> class_id <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> YES  <span class="operator">|</span> MUL <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>                <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"></span><br><span class="line">班级插入数据:</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> CLASSES (name) <span class="keyword">VALUES</span> (<span class="string">&#x27;一班&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> CLASSES (name) <span class="keyword">VALUES</span> (<span class="string">&#x27;二班&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> CLASSES (name) <span class="keyword">VALUES</span> (<span class="string">&#x27;三班&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> CLASSES (name) <span class="keyword">VALUES</span> (<span class="string">&#x27;四班&#x27;</span>);</span><br><span class="line">查看数据 <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> classes;</span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line"><span class="operator">|</span> id <span class="operator">|</span> name <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">1</span> <span class="operator">|</span> 一班 <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">2</span> <span class="operator">|</span> 二班 <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">3</span> <span class="operator">|</span> 三班 <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">4</span> <span class="operator">|</span> 四班 <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line"></span><br><span class="line">学生插入数据:</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (name,class_id) <span class="keyword">VALUES</span> (<span class="string">&#x27;小赵&#x27;</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (name,class_id) <span class="keyword">VALUES</span> (<span class="string">&#x27;小钱&#x27;</span>,<span class="number">2</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (name,class_id) <span class="keyword">VALUES</span> (<span class="string">&#x27;小孙&#x27;</span>,<span class="number">3</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (name,class_id) <span class="keyword">VALUES</span> (<span class="string">&#x27;小李&#x27;</span>,<span class="number">4</span>);</span><br><span class="line">查看数据 <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> student;</span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+----------+</span></span><br><span class="line"><span class="operator">|</span> id <span class="operator">|</span> name <span class="operator">|</span> class_id <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+----------+</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">1</span> <span class="operator">|</span> 小赵 <span class="operator">|</span>        <span class="number">1</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">2</span> <span class="operator">|</span> 小钱 <span class="operator">|</span>        <span class="number">2</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">3</span> <span class="operator">|</span> 小孙 <span class="operator">|</span>        <span class="number">3</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">4</span> <span class="operator">|</span> 小李 <span class="operator">|</span>        <span class="number">4</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+----------+</span></span><br><span class="line">若是像插入班级为<span class="number">5</span>的数据 如:</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student (name,class_id) <span class="keyword">VALUES</span> (<span class="string">&#x27;小周&#x27;</span>,<span class="number">5</span>);</span><br><span class="line">报错: Cannot <span class="keyword">add</span> <span class="keyword">or</span> update a child <span class="type">row</span></span><br><span class="line"></span><br><span class="line">我们删除正在被学生表引用的<span class="string">&#x27;四班&#x27;</span>试试:</span><br><span class="line"><span class="keyword">DELETE</span> classes <span class="keyword">WHERE</span> name <span class="operator">=</span> <span class="string">&#x27;四班&#x27;</span>;</span><br><span class="line">出现:Cannot <span class="keyword">delete</span> <span class="keyword">or</span> update a parent <span class="type">row</span>:不能删除主表中的行</span><br><span class="line"></span><br><span class="line">我们先删除学生表中的 <span class="string">&#x27;小李&#x27;</span>从而解除班级中<span class="string">&#x27;四班&#x27;</span>的外键约束,再来删除<span class="string">&#x27;四班&#x27;</span>(因为小李引用了四班)</span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> name <span class="operator">=</span> <span class="string">&#x27;小李&#x27;</span>;</span><br><span class="line">再次删除classes表中的<span class="string">&#x27;四班&#x27;</span>;</span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> classes <span class="keyword">WHERE</span> name <span class="operator">=</span> <span class="string">&#x27;四班&#x27;</span>;</span><br><span class="line">最后: <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> classes;</span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line"><span class="operator">|</span> id <span class="operator">|</span> name <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">1</span> <span class="operator">|</span> 一班 <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">2</span> <span class="operator">|</span> 二班 <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>  <span class="number">3</span> <span class="operator">|</span> 三班 <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">----+------+</span></span><br><span class="line"><span class="string">&#x27;四班&#x27;</span>被成功删除<span class="operator">!</span></span><br><span class="line"></span><br><span class="line">总结:</span><br><span class="line"><span class="number">1.</span>主表中没有的数据,在附表中,是不可以使用的.</span><br><span class="line"><span class="number">2.</span>主表中记录的数据现在正在被附表所引用,那么主表中正在被引用的数据不可以被删除</span><br><span class="line"><span class="number">3.</span>若要想删除,先将附表中的数据删除在删除主表数据</span><br><span class="line"><span class="number">4.</span>对于外键约束大家可以联想 省,市 来进行联想 (市必须要依赖于省,只要省还有一个市在引用,那么就不可以删除省,要不然市就没有省了. 那么我们想删除省,必须要将该省下所有的市全部删除之后,才可以删除这个省)</span><br></pre></td></tr></table></figure>
-
-<p>8.如何建表之后添加主键约束</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> user4(</span><br><span class="line">    id <span class="type">INT</span>,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">20</span>)</span><br><span class="line">);</span><br><span class="line">运行<span class="keyword">DESCRIBE</span> user4;</span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line"><span class="operator">|</span> Field <span class="operator">|</span> Type        <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line"><span class="operator">|</span> id    <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> name  <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line"></span><br><span class="line">加入主键约束:</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user4 <span class="keyword">add</span> <span class="keyword">PRIMARY</span> KEY(id);</span><br><span class="line">再次运行<span class="keyword">DESCRIBE</span> user4;</span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line"><span class="operator">|</span> Field <span class="operator">|</span> Type        <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line"><span class="operator">|</span> id    <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> PRI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> name  <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line"></span><br><span class="line">删除主键约束:</span><br><span class="line">ALERT <span class="keyword">TABLE</span> user4 <span class="keyword">DROP</span> <span class="keyword">PRIMARY</span> KEY;</span><br><span class="line">运行<span class="keyword">DESCRIBE</span> user4查看表结构:</span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line"><span class="operator">|</span> Field <span class="operator">|</span> Type        <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line"><span class="operator">|</span> id    <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> name  <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line"></span><br><span class="line">使用modify 修改字段.添加约束:</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user4 MODIFY id <span class="type">INT</span> <span class="keyword">PRIMARY</span> key;</span><br><span class="line">使用<span class="keyword">DESCRIBE</span> user4 查看表结构:</span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line"><span class="operator">|</span> Field <span class="operator">|</span> Type        <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line"><span class="operator">|</span> id    <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> PRI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> name  <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+-------+</span></span><br><span class="line"></span><br><span class="line">给主键设置自增长:</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user4 MODIFY id <span class="type">INT</span> AUTO_INCREMENT;</span><br><span class="line">运行 <span class="keyword">DESCRIBE</span> user4 查看表结构:</span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> Field <span class="operator">|</span> Type        <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra          <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+----------------+</span></span><br><span class="line"><span class="operator">|</span> id    <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)     <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> PRI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span> auto_increment <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> name  <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">20</span>) <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>                <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+-------------+------+-----+---------+----------------+ </span></span><br></pre></td></tr></table></figure>
+        <p> <strong>maven</strong>教学资料                                           </p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image001.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image002.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><strong>B</strong>站：<strong>IT</strong>楠老师 公众号：itnanls QQ群： 1083478826 网站：<a target="_blank" rel="noopener" href="http://www.itnanls.cn/">www.itnanls.cn</a></p>
+<p> 一、项目构建                                           </p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image003.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">给你一套源代码，你怎么能跑起来？</p>
+<p>不能把！就是几个文件夹，几个文件。是不能运行的！</p>
+<p>是不是需要和idea打交道，告诉idea怎么样才能运行起来，比如知道main方法在哪里？配置文件在哪里，编译好的文件输出到哪里，是不是？当然eclipse也一样。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image004.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">平时我们是怎么构建项目的，项目怎么运行起来呢？</p>
+<p>idea帮我们编译</p>
+<p>我们依靠点击构建项目</p>
+<p>一切设置好以后，使用工具（idea）帮我们打包</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image005.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">项目构建中几个关键点?</p>
+<p>1、jdk啥版本</p>
+<p>2、哪些文件夹是干啥的！！ 源文件？配置文件？测试文件？在哪里？</p>
+<p>3、如果是web工程，web.xml放哪里？ 4、编译文件，编译后的文件放在哪里。</p>
+<p>5、打包，打包成什么文件</p>
+<p><strong>1</strong>、先聊一聊<strong>idea</strong>的项目结构</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image001.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">好好说说Project Structure</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image006.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">英 /ˈstrʌktʃə(r)/</p>
+<p>“ 项目结构”对话框允许您管理项目和IDE级别的元素，例如Modules，Facets，Libraries， Artifacts和SDK。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image008.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image001.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">打开方式有两种</p>
+<p>1、通过工具栏</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image010.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>2、通过快捷键</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image011.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>（1）  <strong>Project</strong>选项</p>
+<p>指定项目名称，SDK，语言级别和编译器输出路径。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image013.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image014.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">Project name：项目名，使用此字段编辑项目名称。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image015.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">Project SDK：项目SDK，选择项目SDK。如果所需SDK不在列表中，请单击“ New”，然后选择所需的SDK类型。然后，在打开的对话框中，选择SDK主目录，然后单击确定。要查看或编辑所选SDK 的名称和内容，请单击”Edit”。（SDK页面将打开。）</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image016.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">Project language level：选择要支持的Java语言级别。选定的级别将被用作项目默认值。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image006.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">Project compiler output：项目编译器输出，指定IntelliJ IDEA将存储编译结果的路径。单击选择路径对话框中browseButton 的目录。</p>
+<p>指定目录中的两个子目录将被创建：</p>
+<p>production为生产代码。test为测试来源。</p>
+<p>在这些子目录中，将为每个模块创建单独的输出目录。输出路径可以在模块级重新定义。</p>
+<h2 id="（2）-Modules-选项"><a href="#（2）-Modules-选项" class="headerlink" title="（2）  Modules 选项"></a>（2）  Modules 选项</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image018.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>指定项目名称，SDK，语言级别和编译器输出路径。</p>
+<p>Name：项目名称</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image006.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image006.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">Souces：这里对Module的开发目录进行文件夹分类，就是说这个module里有什么内容，说明了   不同性质的内容放在哪里。</p>
+<p>注意，这些不同内容的标记代表了一个标准Java工程的各项内容，IntelliJ就是根据这些标记来识别  一个Java工程的各项内容的，比如，它会用javac去编译标记为Sources的源码，打包的时候会把标  记为Resources的资源拷贝到jar包中，并且忽略标记为Exluded的内容。左边显示的是在选中内容  的预览。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image019.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image019.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">Paths：为模块配置编译器输出路径，还可以指定与模块关联的外部JavaDocs和外部注释的位置。Dependencies：在此选项卡上，您可以定义模块SDK并形成模块依赖关系列表。</p>
+<p>（3）  <strong>Sources</strong>选项</p>
+<p>Sources：源代码存放的文件，蓝色。</p>
+<p>Tests：设置测试代码存放的文件件，绿色。</p>
+<p>Resources：一般对应着Sources文件，一般放配置文件，如：db.properties。Test Resources：这个对应着Tests文件夹，存放着Tests代码的配置文件。</p>
+<p>Excluded：设置配出编译检查的文件，例如我们在project模块设置的out文件夹。</p>
+<h2 id="（4）-Paths"><a href="#（4）-Paths" class="headerlink" title="（4） Paths"></a>（4） Paths</h2><p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image021.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image022.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">Compiler output：编译输出路径。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image022.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">Inherit project compile output path：继承项目编译输出路径 选择此选项以使用为项目指定的路径。即上面在Project选项中设置的out文件路径。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image023.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">Use module compile output path:使用模块编译输出路径。</p>
+<p>Output path：编译输出路径。</p>
+<p>Test output path：测试代码编译输出路径。</p>
+<p>Exclude output paths： 排除输出路径，选中此复选框可以排除输出目录。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image024.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">JavaDoc：使用可用控件组合与模块关联的外部JavaDocs存储位置的列表。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image024.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image026.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image028.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">External Annotations：外部注释。使用   和   管理与模块关联的外部注释的位置（目录）列表。</p>
+<h2 id="（5）-Dependencies"><a href="#（5）-Dependencies" class="headerlink" title="（5） Dependencies"></a>（5） Dependencies</h2><p>在此选项卡上，您可以定义模块SDK并形成模块依赖关系列表。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image030.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image019.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">Module SDK：模块SDK，选择模块SDK。</p>
+<p>（要将项目SDK与模块相关联，请选择Project SDK。请注意，如果稍后更改了项目SDK，模块SDK</p>
+<p>将相应更改。</p>
+<p>如果所需SDK不在列表中，请单击“ 新建”，然后选择所需的SDK类型。然后，在打开的对话框中， 选择SDK主目录，然后单击确定。</p>
+<p>要查看或编辑所选SDK的名称和内容，请单击编辑。（SDK页面将打开。）</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image015.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">依赖列表</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image031.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">相关性存储格式，选择用于存储依赖关系的格式（作为IntelliJ IDEA模块或Eclipse项目）。该选项对使用不同开发工具的团队有帮助。</p>
+<h2 id="（6）-Libraries"><a href="#（6）-Libraries" class="headerlink" title="（6） Libraries"></a>（6） Libraries</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image033.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>在此选项卡上，您可以定义模块SDK并形成模块依赖关系列表。首先，可以创建一个新的项目库，可以设置分类。</p>
+<p>可以添加本地jar包，网络来源的jar包，删除jar包。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image035.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<h2 id="（7）-Facets"><a href="#（7）-Facets" class="headerlink" title="（7） Facets"></a>（7） Facets</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image037.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>表示这个 module 有什么特征，比如 Web，Spring 和 Hibernate 等；</p>
+<h2 id="（8）-Artifacts"><a href="#（8）-Artifacts" class="headerlink" title="（8） Artifacts"></a>（8） Artifacts</h2><p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image039.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image019.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image040.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">是 maven 中的一个概念，表示某个 module 要如何打包，例如 war exploded、war、jar 等等这种打包形式；</p>
+<p>一个 module 有了 Artifacts 就可以部署到应用服务器中了！</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image031.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">在给项目配置 Artifacts 的时候有好多个 type 的选项，exploed 是什么意思？explode 在这里你可以理解为展开，不压缩的意思。也就是 war、jar 等产出物没压缩前的目录结构。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image041.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">建议在开发的时候使用这种模式，便于修改了文件的效果立刻显现出来。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image041.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">默认情况下，IDEA 的 Modules 和 Artifacts 的 output 目录 已经设置好了，不需要更改.</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image041.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">打成 war 包 的时候会自动在 WEB-INF 目录 下生产 classes 目录 ，然后把编译后的文件放进去。</p>
+<h2 id="（9）-SDKS"><a href="#（9）-SDKS" class="headerlink" title="（9） SDKS"></a>（9） SDKS</h2><p>系统开发工具 ，全局 SDK 配置 。</p>
+<h2 id="（10）-Global-libraries"><a href="#（10）-Global-libraries" class="headerlink" title="（10）  Global libraries"></a>（10）  Global libraries</h2><p>全局类库，可以配置一些常用的类库。</p>
+<h2 id="（11）-Problems"><a href="#（11）-Problems" class="headerlink" title="（11）  Problems"></a>（11）  Problems</h2><p>问题，在项目异常的时候很有用，可以根据提示进行项目修复（FIXED）。</p>
+<p>（<strong>12</strong>）**.idea<strong>和</strong>.iml**</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image042.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">我们设置了半天看看我们设置的信息被保存在了哪里？</p>
+<p>xinzhi-shop.iml</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image043.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image045.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image042.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image005.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">这样别的idea打开项目时就能读取出来，并能明确项目的构建信息问，eclipse直接打开能用吗？</p>
+<p>提问现在给你一个java工程的代码你们构建出来了吗？</p>
+<p>或者给你一个eclipse的代码你能转化过来吗？</p>
+<p> 二、<strong>Maven</strong>概述                                           </p>
+<p>以上的工作，需要我们自行构建，而且idea和eclipse，甚至一些其他的开发工具构建的时候是不一样的。</p>
+<p>那么有没有一种统一的方式，甚至无需手动点击，通过配置就可以了，通过使用命令就能就行构建呢？</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image046.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image047.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">当然我们看到了我们的idea其实也是通过之文件来记录构建信息的，那么既然构建如此重要，形成一套规范化的，统一的便捷的构建工具就势在必行，于是出现了maven ，当然还有gradle ，他们的功能异常强大。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image042.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">这样有什么好处</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image048.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image048.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">统一管理jar包，自动导入jar及其依赖，这样是很初学者唯一能感受出来的好处，确实牛逼啊。项目移植之后甚至不需要安装开发工具，只需要maven加命令就能跑起来，降低学习成本。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image041.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">使我们的项目流水线成为可能，因为使用简单的命令我们就能完成项目的编译，打包，发布等工 作，就让程序操作程序成为了可能，大名鼎鼎的jekins技能做到这一点。</p>
+<p><strong>1</strong>、<strong>Maven</strong>下载安装</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image049.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">下载地址：<a target="_blank" rel="noopener" href="http://maven.apache.org/">http://maven.apache.org/</a></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image042.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">小知识点： 作为一个java程序员 apache 网站的规律得知道都是 项目名.apache.org</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image050.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"> <a target="_blank" rel="noopener" href="http://maven.apache.org/">http://maven.apache.org/</a></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image051.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"> <a target="_blank" rel="noopener" href="http://tomcat.apache.org/">http://tomcat.apache.org/</a></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image052.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"> <a target="_blank" rel="noopener" href="http://dubbo.apache.org/">http://dubbo.apache.org/</a></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image053.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"> <a target="_blank" rel="noopener" href="http://hadoop.apache.org/">http://hadoop.apache.org/</a></p>
+<p><strong>Apache</strong>软件基金会（也就是Apache Software Foundation，简称为ASF），是专门为支持开源软件项目而办的一个非盈利性组织。在它所支持的Apache项目与子项目中，所发行的软件产品都遵循Apache   许可证（Apache License）。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image004.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">安装以及配置环境变量，学过点java的都会</p>
+<p>\1.  解压</p>
+<p>\2.  配置MAVEN_HOME</p>
+<p>\3.  配置path，%MAVEN_HOME%\bin</p>
+<p>\4.   </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image055.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>cmd执行 mvn -v ，出现以下界面，成功</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image057.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><strong>2</strong>、<strong>maven</strong>核心配置文件</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image004.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">先照着配置</p>
+<h4 id="（1）-配置路径"><a href="#（1）-配置路径" class="headerlink" title="（1）  配置路径"></a>（1）  配置路径</h4><p>先建立好这个文件夹</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image058.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<h4 id="（2）-配置阿里云镜像"><a href="#（2）-配置阿里云镜像" class="headerlink" title="（2）  配置阿里云镜像"></a>（2）  配置阿里云镜像</h4><p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image005.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">要不啥也下不动</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image059.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>（3）  配置全局编译<strong>jdk</strong>版本</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image060.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p><strong>3</strong>、常常鲜，体验</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image005.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><strong>maven</strong>标准目录</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image061.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>这是大部分Maven工程的目录结构，在这个基础上可以合理地增删目录。</p>
+<p>pom.xml的基本要求：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image062.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>写个Hello.java</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image063.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image064.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image065.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">可以再resources 文件夹下新建db.properties 配置文件，或随便帮一个文件;</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image067.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>执行，以下命令，可能会从网上下载内容，是在下载插件，不要担心。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image068.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image070.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>结果，并生成target目录</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image004.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">结果发现我们编译的class文件和resources中的配置文件都放在了一起</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image072.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>执行 mvn package</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image074.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p>观察target中已经有了我们打包好的jar包</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image076.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>观察名字是不是我们项目的名字加版本号，当然此jar包无法运行，应为maven也不知道你的main方法在哪里，咱们后边讲。</p>
+<p><strong>4</strong>、<strong>Maven</strong>生命周期</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image042.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">maven生命周期其实就是描述了一个项目从源代码到部署的整个周期</p>
+<p>Maven有三个内置的生命周期：默认（<strong>default</strong>），清洁（<strong>clean</strong>）和站点（<strong>site</strong>）。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image077.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image077.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">清洁（clean） 为执行以下工作做必要的清理。就是我们经常做的，删除target文件夹。默认（default） 真正进行项目编译打包等工作的阶段</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image078.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">站点（site）   生成项目报告，站点，发布站点</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image001.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">默认（<strong>default</strong>）的生命周期包括以下阶段（该阶段经过简化，实际上更加复杂）：</p>
+<p>\1.  验证（validate） - 验证项目是否正确，所有必要的信息可用。</p>
+<p>\2.  编译（compile） - 编译项目的源代码。</p>
+<p>\3.  测试（test）    - 使用合适的单元测试框架测试编译的源代码。这些测试不应该要求代码被打包或部署。</p>
+<p>\4.  打包（package）- 采用编译的代码，并以其可分配格式（如JAR）进行打包。</p>
+<p>\5.  验证（verify）  - 对集成测试的结果执行任何检查，以确保满足质量标准。</p>
+<p>\6.  安装（install） - 将软件包安装到本地存储库中，用作本地其他项目的依赖项。</p>
+<p>\7.  部署（deploy） - 在构建环境中完成，将最终的包复制到远程存储库以与其他开发人员和项目共享</p>
+<p>（私服）。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image079.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>此命令在执行安装之前按顺序（验证（validate），编译（compile），打包（package）等）执行每个  默认生命周期阶段。在这种情况下，您只需要调用最后一个构建阶段来执行，安装（install）。</p>
+<p>在构建环境中，使用以下调用将工件清理地构建并部署到共享存储库中。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image080.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>相同的命令可以在多模块场景（即具有一个或多个子项目的项目）中使用。Maven遍历每个子项目并执行清洁（clean），然后执行部署（deploy）（包括所有之前的构建阶段步骤）。</p>
+<p>注意：在我们开发阶段，有一些生命周期的阶段，比如验证（validate）这些，基本很少用到。只要使用关键的几个基本能满足需求。</p>
+<p><strong>5</strong>、<strong>Maven</strong> 常用命令</p>
+<p>下面maven比较常见的一些命令。</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>mvn –version</td>
+<td>显示版本信息</td>
+</tr>
+<tr>
+<td>mvn clean</td>
+<td>清理项目生产的临时文件,一般是模块下的target目录</td>
+</tr>
+<tr>
+<td>mvn compile</td>
+<td>编译源代码，一般编译模块下的src/main/java目录</td>
+</tr>
+<tr>
+<td>mvn package</td>
+<td>项目打包工具,会在模块下的target目录生成jar或war等文件</td>
+</tr>
+<tr>
+<td>mvn test</td>
+<td>测试命令,或执行src/test/java/下junit的测试用例</td>
+</tr>
+<tr>
+<td>mvn install</td>
+<td>将打包的jar/war文件复制到你的本地仓库中,供其他模块使用</td>
+</tr>
+<tr>
+<td>mvn deploy</td>
+<td>将打包的文件发布到远程参考,提供其他人员进行下载依赖</td>
+</tr>
+<tr>
+<td>mvn site</td>
+<td>生成项目相关信息的网站</td>
+</tr>
+<tr>
+<td>mvn  dependency:tree</td>
+<td>打印出项目的整个依赖树</td>
+</tr>
+<tr>
+<td>mvn archetype:generate</td>
+<td>创建Maven的普通java项目</td>
+</tr>
+<tr>
+<td>mvn  tomcat:run</td>
+<td>在tomcat容器中运行web应用</td>
+</tr>
+</tbody></table>
+<p><strong>6</strong>、<strong>Maven</strong>的版本规范（我们的项目）</p>
+<p>所有的软件都用版本</p>
+<p>Maven使用如下几个要素来定位一个项目，因此它们又称为项目的坐标。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image081.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image082.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">团体、组织的标识符。团体标识的约定是，它以创建这个项目的组织名称的逆向域名开 头。一般对应着JAVA的包的结构，例如org.apache。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image081.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image083.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">单独项目的唯一标识符。比如我们的tomcat, commons等。不要在artifactId中包含</p>
+<p>点号(.)。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image077.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image084.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">项目的版本。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image085.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image086.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">项目的类型，默认是jar，描述了项目打包后的输出。类型为jar的项目产生一个JAR文</p>
+<p>件，类型为war的项目产生一个web应用。</p>
+<p>Maven在版本管理时候可以使用几个特殊的字符串 SNAPSHOT，LATEST，RELEASE。比如”1.0-</p>
+<p>SNAPSHOT”。各个部分的含义和处理逻辑如下说明：</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image078.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image087.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">这个版本一般用于开发过程中，表示不稳定的版本。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image088.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image089.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">指某个特定构件的最新发布，这个发布可能是一个发布版，也可能是一个snapshot版，具体看哪个时间最后。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image088.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image090.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">指最后一个发布版。</p>
+<p><strong>7</strong>、在<strong>idea</strong>中配置<strong>maven</strong></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image091.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">把画红线的东西全部配置成自己的。最后一个是仓库，在你的其他盘找一个地方新建repository文件夹，自己要知道，选中，如果勾选不了就选择都选override。</p>
+<p>如果不选择仓库会把jar包下载至C盘的下边目录，不好维护，还占用c盘空间。当然idea和maven可能会     有bug。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image093.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image095.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image003.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">两处都要配置，一个是当前项目的maven配置，一个是新建项目的maven配置。</p>
+<p> 三、<strong>Maven</strong>依赖（重点）                                           </p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image001.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">maven管理依赖也就是jar包牛逼之处是不用我们自己下载，会从一些地方自动下载</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image096.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">maven远程仓库: <a target="_blank" rel="noopener" href="https://mvnrepository.com/">https://mvnrepository.com/</a></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image097.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">maven远程仓库: <a target="_blank" rel="noopener" href="https://maven.aliyun.com/mvn/search">https://maven.aliyun.com/mvn/search</a></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image004.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">maven工程中我们依靠在pom.xml文件进行配置完成jar包管理工作（依赖）</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image098.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">在工程中引入某个jar包，只需要在pom.xml 中引入jar包的坐标，比如引入log4j的依赖：</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image099.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image100.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image101.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image102.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image103.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">通 过 groupId 、               与把对应的jar包引入到工程中来。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image001.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">jar包会自动下载，流程如下</p>
+<p>三个向量来定位Maven仓库其jar包所在的位置，并</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image105.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<h1 id="1、依赖范围"><a href="#1、依赖范围" class="headerlink" title="1、依赖范围"></a><strong>1</strong>、依赖范围</h1><p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image003.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">了解、classpath是个什么东西</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image106.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">顾明思议，就是编译好的class 文件所在的路径。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image001.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image107.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image108.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image110.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">事实上，我们的类加载器（ classloader ）就是去对应的classpath 中加在class二进制文件。普通java项目</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image111.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>META-INF中有个文件，有以下内容，告诉jvm执行的时候去哪个类里找main方法。  普通的java工程类路径就是最外层的目录。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image001.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">web项目</p>
+<p>咱们的src打包后会放在</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image113.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p>src目录下的配置文件会和class文件一样，自动copy到应用的 WEB-INF/classes目录下 ，所以普通jar包的类路径就是根路径，没有资源，如果有配置文件也放在src目录下，他会同步打包在类路径下。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image114.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">所以web项目的classpath是</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image001.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">maven项目</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image115.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">maven工程会将src/main/java 和</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image116.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">文件夹下的文件全部打包在classpath</p>
+<p>中。运行时他们两个的文件夹下的文件会被放在一个文件夹下。</p>
+<p>maven 项目不同的阶段引入到classpath中的依赖是不同的，例如，</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image081.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image117.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image077.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image118.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image085.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image119.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">编译时 ，maven 会将与编译相关的依赖引入classpath中测试时 ，maven会将测试相关的的依赖引入到classpath中运行时 ，maven会将与运行相关的依赖引入classpath中</p>
+<p>而依赖范围就是用来控制依赖于这三种classpath的关系。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image042.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">scope标签就是依赖范围的配置</p>
+<p>该项默认配置compile,可选配置还有test、provided、runtime、system、import。    其中compile、test和provided使用较多，下面依次介绍。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image120.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">有些jar包（如selvlet-api）运行时其实是不需要的，因为tomcat里有，但编译时是需要的，因为   编译的时候没有tomcat环境</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image001.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">有些jar只在测试的时候才能用到。比如junit，真是运行不需要的</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image091.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">有些jar运行，测试时必须要有，编译时不需要，如jdbc驱动，编译时用的都是jdk中的接口，运行时我们才使用反射注册了驱动。</p>
+<p>向以上的这些jar包不是说使用默认的compile一定不行，但是设置成合适的范围更好，当然有事会有问题，比如你引入的servlet-api和tomcat自带的不一样，就会出问题。</p>
+<p><strong>1.1</strong> 编译依赖范围（<strong>compile</strong>）</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image121.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image122.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image123.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image124.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">该范围就是默认依赖范围，此依赖范围对于编译、测试、运行三种classpath 都有效，举个简单的例子，假如项目中有fastjson 的依赖，那么fastjson 不管是在编译，测试，还是运行都会被用到，因此fastjson 必须是编译范围（构件默认的是编译范围，所以依赖范围是编译范围的无须显示指定）</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image125.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p><strong>1.2</strong> 测试依赖范围**(test)**</p>
+<p>使用此依赖范围的依赖，只对测试classpath有效，在编译主代码和项目运行时，都将无法使用该依赖， 最典型的例子就是 Junit, 构件在测试时才需要，所以它的依赖范围是测试，因此它的依赖范围需要显示指定为、、<scope>test</scope>,当然不显示指定依赖范围也不会报错，但是该依赖会被加入到编译和  运行的classpath中,造成不必要的浪费 。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image126.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><strong>1.3</strong> 已提供依赖范围**(provided)**</p>
+<p>使用该依赖范围的maven依赖，只对编译和测试的classpath有效，对运行的classpath无效，典型的例 子就是servlet-api， 编译和测试该项目的时候需要该依赖，但是在运行时，web容器已经提供的该依赖，所以运行时就不再需要此依赖，如果不显示指定该依赖范围，并且容器依赖的版本和maven依赖的版本不一致的话，可能会引起版本冲突，造成不良影响。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image127.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><strong>1.4</strong> 运行时依赖范围**(runtime)**</p>
+<p>使用该依赖范围的maven依赖，只对测试和运行的classpath有效，对编译的classpath无效，典型例子  就是JDBC的驱动实现，项目主代码编译的时候只需要JDK提供的JDBC接口，只有在测试和运行的时候才  需要实现上述接口的具体JDBC驱动。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image128.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image042.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">其他的范围不常用，有兴趣自己研究</p>
+<h1 id="2、依赖的传递"><a href="#2、依赖的传递" class="headerlink" title="2、依赖的传递"></a><strong>2</strong>、依赖的传递</h1><p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image130.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">jar其实也是别人写的工程，他也会依赖其他的jar包，传递性让我们可以不用关系我们所依赖的jar他依赖了哪些jar，只要我们添加了依赖，他会自动将他所依赖的jar统统依赖进来。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image003.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">我们只需依赖A.jar，其他的会自动传递进来。依赖传递的原则：</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image097.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">最短路径优先原则：如果A依赖于B，B依赖于C，在B和C 中同时有log4j的依赖，并且这两个版本不一致，那么A会根据最短路径原则，在A中会传递过来B的log4j版本。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image132.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image088.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">路径相同先声明原则：如果我们的工程同时依赖于B和A，B和C没有依赖关系，并且都有D的依赖， 且版本不一致，那么会引入在pom.xml中先声明依赖的log4j版本。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image134.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image135.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image001.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">因为1.2.3先声明，所以获胜。特别注意：</p>
+<p>不同版本的jar选一个会导致一个问题，1.3.2版本高，A.jar可能用到了高版本的一些新的方法，此时因为某些原因系统选择了低版本，就会导致A.jar报错，无法运行。那么就要想办法把低版本排除掉，一般高 版本会兼容低版本。</p>
+<h1 id="3、依赖的排除"><a href="#3、依赖的排除" class="headerlink" title="3、依赖的排除"></a><strong>3</strong>、依赖的排除</h1><p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image001.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">结合上个例子，我们想把低版本的D.jar排除了，就可以这样做，这样系统就只能依赖高版本</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image136.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<h1 id="4、聚合和继承"><a href="#4、聚合和继承" class="headerlink" title="4、聚合和继承"></a><strong>4</strong>、聚合和继承</h1><p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image003.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">分布式开发必须要用</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image042.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">聚合模块（父模块）的打包方式必须为<strong>pom</strong>，否则无法完成构建。</p>
+<p>在聚合多个项目时，如果这些被聚合的项目中需要引入相同的Jar，那么可以将这些Jar写入父pom中，各个子项目继承该pom即可。，父模块的打包方式必须为pom，否则无法构建项目。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image042.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">通过在各个子模块中配置来表明其继承与哪一个父模块：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image137.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>可以被继承的POM元素如下：</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image138.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image138.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><strong>groupId</strong>：项目组ID，项目坐标的核心元素<strong>version</strong>：项目版本，项目坐标的核心因素</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image097.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">properties：自定义的Maven属性       一般用于同一制定各个依赖的版本号</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image097.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image097.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image139.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">dependencies：项目的依赖配置                                     公共的依赖dependencyManagement：项目的依赖管理配置repositories：项目的仓库配置</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image140.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">build：包括项目的源码目录配置、输出目录配置、插件配置、插件管理配置等</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image042.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">一些对项目的描述</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image088.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image088.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">description：项目的描述信息organization：项目的组织信息</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image141.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image141.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">inceptionYear：项目的创始年份url：项目的URL地址</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image141.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image141.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">developers：项目的开发者信息contributors：项目的贡献者信息</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image081.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">distributionManagement：项目的部署配置</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image078.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image078.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">issueManagement：项目的缺陷跟踪系统信息ciManagement：项目的持续集成系统信息</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image138.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">scm：项目的版本控制系统</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image138.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image138.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">malilingLists： 项 目 的 邮 件 列 表 信 息     reporting：包括项目的报告输出目录配置、报告插件配置等</p>
+<p> 四、<strong>POM</strong>文件                                           </p>
+<h1 id="1、基础配置"><a href="#1、基础配置" class="headerlink" title="1、基础配置"></a><strong>1</strong>、基础配置</h1><p>一个典型的pom.xml文件配置如下：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image142.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>8          <img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image143.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><!-- 本项目的唯一ID，一个groupId下面可能多个项目，就是靠artifactId来区分的 --></p>
+<p>9          <artifactId>test</artifactId></p>
+<p>10          <!-- 本项目目前所处的版本号 --></p>
+<p>11          <version>1.0.0-SNAPSHOT</version> 12</p>
+<p>13          <!-- 打包的机制，如pom,jar,          war，默认为jar --></p>
+<p>14          <packaging>jar</packaging> 15</p>
+<p>16          &lt;!– 为pom定义一些常量，在pom中的其它地方可以直接引用 使用方式 如下 ：</p>
+<p>${file.encoding} –&gt;</p>
+<p>17          <!-- 常常用来整体控制一些依赖的版本号 --></p>
+<p>18          <properties></p>
+<p>19                &lt;file.encoding&gt;UTF-8&lt;/file.encoding&gt;</p>
+<p>20                &lt;java.source.version&gt;1.8&lt;/java.source.version&gt;</p>
+<p>21                &lt;java.target.version&gt;1.8&lt;/java.target.version&gt;</p>
+<p>22          </properties> 23</p>
+<p>24</p>
+<p>25          <!-- 定义本项目的依赖关系，就是依赖的jar包 --></p>
+<p>26          <dependencies></p>
+<p>27                <!-- 每个dependency都对应这一个jar包 --></p>
+<p>28                <dependency></p>
+<p>29                      &lt;!–一般情况下，maven是通过groupId、artifactId、version这三个元素值</p>
+<p>（俗称坐标）来检索该构件，   然后引入你的工程。如果别人想引用你现在开发的这个项目（前提是已开发完毕并发布到了远程仓库），–&gt;</p>
+<p>30                  <!--就需要在他的pom文件中新建一个dependency节点，将本项目的groupId、artifactId、version写入， maven就会把你上传的jar包下载到他的本地 --></p>
+<p>31                      <groupId>junit</groupId></p>
+<p>32                      <artifactId>junit</artifactId></p>
+<p>33                      <version>4.12</version> 34</p>
+<p>35                      <!-- 依赖范围 --></p>
+<p>36                      <scope>complie</scope></p>
+<p>37                      &lt;!– 设置     依赖是否可选，默认为false,即子项目默认都继承。如果为true,</p>
+<p>38                             则子项目必需显示的引入   –&gt;</p>
+<p>39                      <optional>false</optional> 40</p>
+<p>41                      <!-- 依赖排除--></p>
+<p>42                      <exclusions></p>
+<p>43                            <exclusion></p>
+<p>44                                  <groupId>org.slf4j</groupId></p>
+<p>45                                  <artifactId>slf4j-api</artifactId></p>
+<p>46                            </exclusion></p>
+<p>47                      </exclusions></p>
+<p>48                </dependency></p>
+<p>49          </dependencies> 50</p>
+<p>51          …</p>
+<p>52    </project></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image005.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image144.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">一般来说，上面的几个配置项对任何项目都是必不可少的，定义了项目的基本属性。 除了dependencies我们还用到了dependencyManagement，区别如下</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image141.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image141.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">即使在子项目中不写该依赖项，那么子项目仍然会从父项目中继承该依赖项（全部继承）。 继承下来就会被编译，如果子项目根本不用这个依赖会增加子工程的负担。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image145.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">dependencyManagement ：通常会在父工程中定义，目的是统一各个子模块的依赖版本，有不用实际依赖</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image146.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">只是声明依赖，并不实现引入</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image146.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">子项目需要显示的声明需要用的依赖。如果不在子项目中声明依赖，是不会从父项目中继承下来 的；</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image141.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">只有在子项目中写了该依赖项，并且没有指定具体版本，才会从父项目中继承该项，并且version 和scope都读取自父pom;另外如果子项目中指定了版本号，那么会使用子项目中指定的jar版本。</p>
+<h1 id="2、构建配置"><a href="#2、构建配置" class="headerlink" title=" 2、构建配置"></a><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image147.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"> <strong>2</strong>、构建配置</h1><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image148.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image149.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p>我们常用的几个配置</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image042.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">关于资源处理的配置</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image004.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">有些小伙伴就喜欢在src中填写配置文件</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image150.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image001.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">添加本地jar包</p>
+<p>本地jar，如：支付宝jar包放到 src/main/webapp/WEB-INF/lib 文件夹下，如果没有配置，本地没问题，但是线上会找不到sdk类，为什么要引入，因为支付宝jar包再中央仓库没有</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image151.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image152.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<h1 id="3、仓库配置"><a href="#3、仓库配置" class="headerlink" title="      3、仓库配置"></a><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image153.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">      <strong>3</strong>、仓库配置</h1><p>pom.xml里面的仓库与setting.xml里的仓库功能是一样的。主要的区别在于，pom里的仓库是个性化的。比如一家大公司里的setting文件是公用的，所有项目都用一个setting文件，但各个子项目却会引用     不同的第三方库，所以就需要在pom.xml里设置自己需要的仓库地址。</p>
+<h1 id="5、多环境配置"><a href="#5、多环境配置" class="headerlink" title="      5、多环境配置"></a><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image154.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">      <strong>5</strong>、多环境配置</h1><p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image155.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image156.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><strong>5</strong></p>
+<p>、项目信息配置（知道）                                                         </p>
+<table>
+<thead>
+<tr>
+<th>13</th>
+<th><!--项目创建年份，4位数字。当产生版权信息时需要使用这个值。 --></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>14</td>
+<td><inceptionYear /></td>
+</tr>
+<tr>
+<td>15</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td><!--项目开发者列表 --></td>
+</tr>
+<tr>
+<td>17</td>
+<td><developers></td>
+</tr>
+<tr>
+<td>18</td>
+<td></td>
+</tr>
+<tr>
+<td>19</td>
+<td><!--某个项目开发者的信息 --></td>
+</tr>
+<tr>
+<td>20</td>
+<td><developer></td>
+</tr>
+<tr>
+<td>21</td>
+<td><!--SCM里项目开发者的唯一标识符 --></td>
+</tr>
+<tr>
+<td>22</td>
+<td><id> HELLO WORLD </id></td>
+</tr>
+<tr>
+<td>23</td>
+<td><!--项目开发者的全名 --></td>
+</tr>
+<tr>
+<td>24</td>
+<td><name> banseon </name></td>
+</tr>
+<tr>
+<td>25</td>
+<td><!--项目开发者的email --></td>
+</tr>
+<tr>
+<td>26</td>
+<td><email> <a href="mailto:banseon@126.com">banseon@126.com</a></email></td>
+</tr>
+<tr>
+<td>27</td>
+<td><!--项目开发者的主页的URL --></td>
+</tr>
+<tr>
+<td>28</td>
+<td><url /></td>
+</tr>
+<tr>
+<td>29</td>
+<td><!--项目开发者在项目中扮演的角色，角色元素描述了各种角色 --></td>
+</tr>
+<tr>
+<td>30</td>
+<td><roles></td>
+</tr>
+<tr>
+<td>31</td>
+<td><role> Project Manager</role></td>
+</tr>
+<tr>
+<td>32</td>
+<td><role>Architect </role></td>
+</tr>
+<tr>
+<td>33</td>
+<td></roles></td>
+</tr>
+<tr>
+<td>34</td>
+<td><!--项目开发者所属组织 --></td>
+</tr>
+<tr>
+<td>35</td>
+<td><organization> demo</organization></td>
+</tr>
+<tr>
+<td>36</td>
+<td><!--项目开发者所属组织的URL --></td>
+</tr>
+<tr>
+<td>37</td>
+<td><organizationUrl><a target="_blank" rel="noopener" href="http://hi.clf.com/">http://hi.clf.com/ </a></organizationUrl></td>
+</tr>
+<tr>
+<td>38</td>
+<td><!--项目开发者属性，如即时消息如何处理等 --></td>
+</tr>
+<tr>
+<td>39</td>
+<td><properties></td>
+</tr>
+<tr>
+<td>40</td>
+<td><dept> No </dept></td>
+</tr>
+<tr>
+<td>41</td>
+<td></properties></td>
+</tr>
+<tr>
+<td>42</td>
+<td><!--项目开发者所在时区， -11到12范围内的整数。 --></td>
+</tr>
+<tr>
+<td>43</td>
+<td><timezone> -5</timezone></td>
+</tr>
+<tr>
+<td>44</td>
+<td></developer></td>
+</tr>
+<tr>
+<td>45</td>
+<td></td>
+</tr>
+<tr>
+<td>46</td>
+<td></developers></td>
+</tr>
+<tr>
+<td>47</td>
+<td></td>
+</tr>
+<tr>
+<td>48</td>
+<td><!--项目的其他贡献者列表 --></td>
+</tr>
+<tr>
+<td>49</td>
+<td><contributors></td>
+</tr>
+<tr>
+<td>50</td>
+<td></td>
+</tr>
+<tr>
+<td>51</td>
+<td><!--项目的其他贡献者。参见developers/developer元素 --></td>
+</tr>
+<tr>
+<td>52</td>
+<td><contributor></td>
+</tr>
+<tr>
+<td>53</td>
+<td><name /></td>
+</tr>
+<tr>
+<td>54</td>
+<td><email /></td>
+</tr>
+<tr>
+<td>55</td>
+<td><url /></td>
+</tr>
+<tr>
+<td>56</td>
+<td><organization /></td>
+</tr>
+<tr>
+<td>57</td>
+<td><organizationUrl /></td>
+</tr>
+<tr>
+<td>58</td>
+<td><roles /></td>
+</tr>
+<tr>
+<td>59</td>
+<td><timezone /></td>
+</tr>
+<tr>
+<td>60</td>
+<td><properties /></td>
+</tr>
+<tr>
+<td>61</td>
+<td></contributor></td>
+</tr>
+<tr>
+<td>62</td>
+<td></td>
+</tr>
+<tr>
+<td>63</td>
+<td></contributors></td>
+</tr>
+<tr>
+<td>64</td>
+<td></td>
+</tr>
+<tr>
+<td>65</td>
+<td>&lt;!–该元素描述了项目所有License列表。应该只列出该项目的license列表，不要列出依赖项目的</td>
+</tr>
+<tr>
+<td></td>
+<td>license列表。 –&gt;</td>
+</tr>
+<tr>
+<td>66</td>
+<td><!--如果列出多个license，用户可以选择它们中的一个而不是接受所有license。 --></td>
+</tr>
+<tr>
+<td>67</td>
+<td><licenses></td>
+</tr>
+<tr>
+<td>68</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image157.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image158.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">还有一些可以了解的不常用的配置如报表配置、问题管理配置、项目集成配置、profile配置有兴趣的自行学习一下</p>
+<p> 五、<strong>Maven</strong>仓库                                           </p>
+<p>任何的构件都有唯一的坐标，Maven根据这个坐标定义了构件在仓库中的唯一存储路径，</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image081.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">Maven仓库分为2类： 本地仓库</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image159.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">远程仓库，远程仓库又分成3种：</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image160.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image160.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">中央仓库私服</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image161.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">其它公共库</p>
+<p>maven项目使用的仓库一共有如下几种方式：</p>
+<p>\1.  中央仓库，这是默认的仓库</p>
+<p>\2.  镜像仓库，通过 sttings.xml 中的 settings.mirrors.mirror 配置</p>
+<p>\3.  全局profile仓库，通过 settings.xml 中的 settings.repositories.repository 配置</p>
+<p>\4.  项目仓库，通过 pom.xml 中的 project.repositories.repository 配置</p>
+<p>\5.  项目profile仓库，通过 pom.xml 中的 project.profiles.profile.repositories.repository 配置</p>
+<p>\6.  本地仓库</p>
+<p>搜索顺序如下：</p>
+<p>local_repo &gt; settings_profile_repo &gt; pom_profile_repo &gt; pom_repositories &gt; settings_mirror &gt; central</p>
+<h1 id="1、本地仓库"><a href="#1、本地仓库" class="headerlink" title="1、本地仓库"></a><strong>1</strong>、本地仓库</h1><p>本地仓库是Maven在本地存储构建的地方。Maven的本地仓库，在安装maven后并不会创建，它是在第一次执行Maven命令的时候才被创建。</p>
+<p>Maven本地仓库的默认位置：无论是Windows还是Linux，在用户的目录下都有一个.m2/repository/的  仓库目录，这就是Maven仓库的默认位置。</p>
+<p>在Maven的目录下的conf目录下，有一个settings.xml文件，是Maven的配置文件，在里面可以修改本  地仓库的位置。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image042.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">修改本地仓库位置：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image162.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<h1 id="2、远程仓库"><a href="#2、远程仓库" class="headerlink" title="2、远程仓库"></a><strong>2</strong>、远程仓库</h1><p>远程仓库主要用于获取其它人的Maven构件，其中最主要的就是中央仓库。关于如何在Maven中配置远程仓库，可以查看POM文件章节。</p>
+<h3 id="2-1-中央仓库"><a href="#2-1-中央仓库" class="headerlink" title="2.1 中央仓库"></a><strong>2.1</strong> 中央仓库</h3><p>中央仓库是默认的的远程仓库，Maven在安装的时候，自带的就是中央仓库的配置。所有的Maven都会继承超级POM，超级POM种包含如下配置：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image163.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>中央仓库包含了绝大多数流行的开源Java构件，以及源码、作者信息、SCM、信息、许可证信息等。</p>
+<p>还可以在里面配置优先使用的镜像，比如在国内直接连中央仓库速度较慢，一般使用阿里的镜像仓 库。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image164.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<h3 id="2-2-私服"><a href="#2-2-私服" class="headerlink" title="2.2 私服"></a><strong>2.2</strong> 私服</h3><p>私服是一种特殊的远程仓库，它是架设在局域网内的仓库服务，私服代理广域网上的远程仓库，供局域 网内的Maven用户使用。当Maven需要下载构件的时候，它从私服请求，如果私服上不存在该构件，则从外部的远程仓库下载，缓存在私服上之后，在为Maven的下载请求提供服务。</p>
+<p>Maven私服的优点：</p>
+<p>\1.  加速构建；</p>
+<p>\2.  节省带宽；</p>
+<p>\3.  节省中央maven仓库的带宽；</p>
+<p>\4.  稳定（应付一旦中央服务器出问题的情况）；</p>
+<p>\5.  可以建立本地内部仓库；</p>
+<p>\6.  可以建立公共仓库。</p>
+<p>maven 在默认情况下是从中央仓库下载构建，也就是 id 为 central 的仓库。如果没有特殊需求，一般只需要将私服地址配置为镜像，同时配置其代理所有的仓库就可以实现通过私服下载依赖的功能。镜像配  置如下：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image165.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>实战：使用<strong>Docker</strong>创建<strong>Nexus</strong>私服</p>
+<p>启动Docker，输入命令：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image166.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image167.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p>运行完毕，在浏览器访问<a target="_blank" rel="noopener" href="http://192.168.120.201:8081/">http://192.168.120.201:8081/</a> 进入Nexus页面。</p>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image168.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img">如果访问不成功，可以在命令行输入</p>
+<p>输入默认的用户名和密码admin/xxxxxxxx即可登录。</p>
+<p>查看日志分析原因。</p>
+<p>进入界面后顶部由2个按钮，分别是仓库和设置。可以看到由4个默认的仓库。</p>
+<p> <a target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/repository/maven/">https://mirrors.huaweicloud.com/repository/maven/</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image170.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>一般来说，Nexus 的仓库分为这么几类：</p>
+<p>hosted 宿主仓库：主要用于部署无法从公共仓库获取的构件（如 oracle 的 JDBC 驱动）以及自己或第三方的项目构件；</p>
+<p>proxy 代理仓库：代理公共的远程仓库；</p>
+<p>group 仓库组：Nexus 通过仓库组的概念统一管理多个仓库，这样我们在项目中直接请求仓库组即可请求到仓库组管理的多个仓库。</p>
+<p>以下为了解，对私服进行权限认证（了解）</p>
+<p>大部分公共的远程仓库无须认证就可以直接访问，但我们在平时的开发中往往会架设自己的Maven远程仓库，出于安全方面的考虑，我们需要提供认证信息才能访问这样的远程仓库。</p>
+<p>配置认证信息和配置远程仓库不同，远程仓库可以直接在pom.xml中配置，但是认证信息必须配置在</p>
+<p>settings.xml文件中。</p>
+<p>这是因为pom往往是被提交到代码仓库中供所有成员访问的，而settings.xml一般只存在于本机。因    此，在settings.xml中配置认证信息更为安全。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image171.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>pom文件</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image172.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image173.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p>激活一个环境的方式</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image174.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p> 六、<strong>Maven</strong>插件                                           </p>
+<p> <strong>1</strong>、<strong>Maven</strong> 插件介绍                                                         </p>
+<p>Maven 实际上是一个依赖插件执行的框架，每个任务实际上是由插件完成。Maven 插件通常被用来：</p>
+<p>打包jar 文件创建 war 文件编译代码文件代码单元测试创建工程文档创建工程报告</p>
+<p>插件通常提供了一个目标的集合，并且可以使用下面的语法执行：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image174.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>例如，一个 Java 工程可以使用 maven-compiler-plugin 的 compile-goal 编译，使用以下命令：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image175.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p> <strong>2</strong>、<strong>maven-compiler-plugin</strong>                                           </p>
+<p>设置maven编译的jdk版本，maven3默认用jdk1.5，maven2默认用jdk1.3</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image176.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p> <strong>3</strong>、<strong>tomcat</strong>插件                                                         </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image178.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>web目录结构</p>
+<p>添加插件在build中</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image179.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>点击idea右侧的maven我们可以方便的看到我们使用了什么插件，并可以点击执行相应的命令</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image181.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>通过插件和命令我们都可以启动项目了，都不用部署到tomcat里了。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image182.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><strong>4</strong></p>
+<p>、</p>
+<p><strong>war</strong></p>
+<p>包打插件                                                         </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image184.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>执行命令 mvn clean package</p>
+<p> <strong>5</strong>、<strong>jar</strong>包的插件                                                         </p>
+<p>maven-jar-plugin，默认的打包插件，用来打普通的project JAR包； maven-shade-plugin，用来打可执行JAR包，也就是所谓的fat JAR包；</p>
+<p>maven-assembly-plugin，支持自定义的打包结构，也可以定制依赖项等。</p>
+<p>我们日常使用的以maven-assembly-plugin为最多，因为大数据项目中往往有很多shell脚本、SQL脚 本、.properties及.xml配置项等，采用assembly插件可以让输出的结构清晰而标准化。</p>
+<p>自己网上查资料深入学习</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image185.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image186.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></p>
+<p>查件太多了，基本上所有的功能都是通过查件附加的！</p>
+<p> 七、<strong>Maven</strong>项目模板（没啥用，了解）                                           </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image187.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>Archetype 是一个 Maven 插件，其任务是按照其模板来创建一个项目结构。执行如下命令即可创建Maven项目模板。</p>
+<p>常用的archetype有以下2种：</p>
+<p>maven-archetype-quickstart默认的Archetype</p>
+<p>基本内容包括：</p>
+<p>一个包含junit依赖声明的pom.xml</p>
+<p>src/main/java主代码目录及一个名为App的类</p>
+<p>src/test/java测试代码目录及一个名为AppTest的测试用例</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image188.gif" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>maven-archetype-webapp</p>
+<p>一个最简单的Maven war项目模板，当需要快速创建一个Web应用的时候可以使用它。生成的项目内容包括：</p>
+<p>一个packaging为war且带有junit依赖声明的pom.xml src/main/webapp/目录</p>
+<p>src/main/webapp/index.jsp文件</p>
+<p>src/main/webapp/WEB-INF/web.xml文件</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image190.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<p>其实这个模板并不全。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><img "" class="lazyload placeholder" data-original="file:///C:/WINDOWS/TEMP/msohtmlclip1/01/clip_image192.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="img"></td>
+</tr>
+</tbody></table>
+<h1 id="完结！"><a href="#完结！" class="headerlink" title="完结！"></a>完结！</h1>
       </div>
       
         <div class="copyright">
@@ -870,7 +2097,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/xfrl/2020/10/02/MySQL基础/" target="_blank" title="MySQL基础">https://xfrl.github.io/xfrl/2020/10/02/MySQL基础/</a>
+    <a href="/xfrl/2021/06/15/1/" target="_blank" title="maven教学资料">https://xfrl.github.io/xfrl/2021/06/15/1/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -890,17 +2117,22 @@
 
   
   <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="https://img12.360buyimg.com/ddimg/jfs/t1/178455/20/10783/4125822/60d41db4Ecd2b193d/bc77cc8ca9d6c851.png" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="https://img14.360buyimg.com/ddimg/jfs/t1/184305/33/9398/3779538/60c9e355E8f468426/1e3ea6afe77c8f38.png" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/xfrl/2020/10/30/MySQL%E7%AC%94%E8%AE%B0/" class="post-nav-link">
+    <a href="/xfrl/2021/06/15/Maven/" class="post-nav-link">
       <div class="title">
         <i class="fa fa-angle-left"></i> Prev:
-        <div>MySQL学习笔记</div>
+        <div>maven教学资料</div>
       </div>
       
       <!-- <div class="content">
-        MySQL学习笔记登录和退出MySQL服务器12345# 登录MySQL$ MySQL -u root -p123456
+        maven教学资料一、项目构建
+给你一套源代码，你怎么能跑起来？
+
+
+不能把！就是几个文件夹，几个文件。是不能运行的！
+
       </div> -->
     </a>
   </div>
@@ -909,16 +2141,17 @@
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="https://img13.360buyimg.com/ddimg/jfs/t1/183824/35/15593/2247696/60fcbf17Ed7ba682e/21bd8101c1a96998.png" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="https://img11.360buyimg.com/ddimg/jfs/t1/182872/30/9517/3706433/60cab6b2E526df54d/79cd3d8c9eeb7efa.png" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/xfrl/2020/06/09/python%E5%9F%BA%E7%A1%80/" class="post-nav-link">
+    <a href="/xfrl/2020/12/01/python%20%E7%88%AC%E8%99%AB%E4%B9%8Bselenium/" class="post-nav-link">
       <div class="title">
         Next: <i class="fa fa-angle-right"></i>
-        <div>初遇Python</div>
+        <div>python可视化爬虫</div>
       </div>
       <!-- <div class="content">
-        Python基础语法介绍一、Python简介1. 了解PythonPython是一种解释型（这意味着开发过程中没有了编译
+        python可视化爬虫之selenium可视化爬虫前言之所以把selenium爬虫称之为可视化爬虫
+主要是相较于前面所提
       </div> -->
     </a>
   </div>
