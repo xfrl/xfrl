@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>python爬虫方法介绍 | xfrl&#39;s blog</title>
+  <title>Python-文件操作 | xfrl&#39;s blog</title>
 
   
     
@@ -697,7 +697,7 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="https://img10.360buyimg.com/ddimg/jfs/t1/173916/28/15028/3761469/60cab512E2a334488/c7115fd2d7f81c9d.png" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="https://img11.360buyimg.com/ddimg/jfs/t1/194444/15/15789/4919285/6103eb18Eedd168ee/54810682873994f2.png" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
@@ -708,7 +708,7 @@
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
           <script>
             var typed = new Typed("#post-detail-header-title", {
-              strings: ['python爬虫方法介绍'],
+              strings: ['Python-文件操作'],
               startDelay: 100,
               typeSpeed: 100,
               loop: false,
@@ -733,7 +733,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2020-11-13</span>
+        <span class="post-time">2020-06-26</span>
       </div>
       
       <div class="post-tags-categories">
@@ -741,8 +741,8 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/xfrl/tags/%E7%88%AC%E8%99%AB/" class="">
-              爬虫
+            <a href="/xfrl/tags/py%E5%9F%BA%E7%A1%80/" class="">
+              py基础
             </a>
           
         </div>
@@ -759,68 +759,253 @@
         
       </div>
       <div class="post-content">
-        <h1 id="Python爬虫——四种常见基础爬虫方法介绍"><a href="#Python爬虫——四种常见基础爬虫方法介绍" class="headerlink" title="Python爬虫——四种常见基础爬虫方法介绍"></a>Python爬虫——四种常见基础爬虫方法介绍</h1><h2 id="一、Urllib方法"><a href="#一、Urllib方法" class="headerlink" title="一、Urllib方法"></a>一、Urllib方法</h2><p>Urllib是python内置的HTTP请求库</p>
-<pre><code>import urllib.request
-</code></pre>
+        <h2 id="一、文件操作的作用"><a href="#一、文件操作的作用" class="headerlink" title="一、文件操作的作用"></a>一、文件操作的作用</h2><p>思考：文件操作包含什么？</p>
+<p>答：打开、关闭、读、写、复制…</p>
+<p>思考：文件操作的的作用是什么？</p>
+<p>答：读取内容、写入内容、备份内容…</p>
+<blockquote>
+<p>总结：文件操作的作用就是把一些内容(数据)存储存放起来，可以让程序下一次执行的时候直接使用，而不必重新制作一份，省时省力。</p>
+</blockquote>
+<h2 id="二、文件的基本操作"><a href="#二、文件的基本操作" class="headerlink" title="二、文件的基本操作"></a>二、文件的基本操作</h2><h3 id="1-文件操作步骤"><a href="#1-文件操作步骤" class="headerlink" title="1. 文件操作步骤"></a>1. 文件操作步骤</h3><ol>
+<li>打开文件</li>
+<li>读写等操作</li>
+<li>关闭文件</li>
+</ol>
+<blockquote>
+<p>注意：可以只打开和关闭文件，不进行任何读写操作。</p>
+</blockquote>
+<h4 id="1-1-打开"><a href="#1-1-打开" class="headerlink" title="1.1 打开"></a>1.1 打开</h4><p>在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件，语法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">open</span>(name, mode)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>name：是要打开的目标文件名的字符串(可以包含文件所在的具体路径)。</p>
+<p>mode：设置打开文件的模式(访问模式)：只读、写入、追加等。</p>
+<h5 id="1-1-1-打开文件模式"><a href="#1-1-1-打开文件模式" class="headerlink" title="1.1.1 打开文件模式"></a>1.1.1 打开文件模式</h5><table>
+<thead>
+<tr>
+<th>模式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td>rb</td>
+<td>以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td>rb+</td>
+<td>以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td>w</td>
+<td>打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>wb</td>
+<td>以二进制格式打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>wb+</td>
+<td>以二进制格式打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>a</td>
+<td>打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td>ab</td>
+<td>以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+<tr>
+<td>ab+</td>
+<td>以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+</tbody></table>
+<h5 id="1-1-2-快速体验"><a href="#1-1-2-快速体验" class="headerlink" title="1.1.2 快速体验"></a>1.1.2 快速体验</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：此时的<code>f</code>是<code>open</code>函数的文件对象。</p>
+</blockquote>
+<h4 id="2-1-文件对象方法"><a href="#2-1-文件对象方法" class="headerlink" title="2.1 文件对象方法"></a>2.1 文件对象方法</h4><h5 id="1-2-1-写"><a href="#1-2-1-写" class="headerlink" title="1.2.1 写"></a>1.2.1 写</h5><ul>
+<li>语法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">文件对象.write(<span class="string">&#x27;内容&#x27;</span>)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>#1.定位抓取的url</li>
+<li>体验</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url=&#x27;http://www.baidu.com/&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 打开文件</span></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.文件写入</span></span><br><span class="line">f.write(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 关闭文件</span></span><br><span class="line">f.close()</span><br><span class="line"><span class="number">12345678</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：</p>
+<ol>
+<li><code>w</code>和<code>a</code>模式：如果文件不存在则创建该文件；如果文件存在，<code>w</code>模式先清空再写入，<code>a</code>模式直接末尾追加。</li>
+<li><code>r</code>模式：如果文件不存在则报错。</li>
+</ol>
+</blockquote>
+<h5 id="1-2-2-读"><a href="#1-2-2-读" class="headerlink" title="1.2.2 读"></a>1.2.2 读</h5><ul>
+<li>read()</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">文件对象.read(num)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>num表示要从文件中读取的数据的长度（单位是字节），如果没有传入num，那么就表示读取文件中所有的数据。</p>
+</blockquote>
+<ul>
+<li>readlines()</li>
+</ul>
+<p>readlines可以按照行的方式把整个文件中的内容进行一次性读取，并且返回的是一个列表，其中每一行的数据为一个元素。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>)</span><br><span class="line">content = f.readlines()</span><br><span class="line"></span><br><span class="line"><span class="comment"># [&#x27;hello world\n&#x27;, &#x27;abcdefg\n&#x27;, &#x27;aaa\n&#x27;, &#x27;bbb\n&#x27;, &#x27;ccc&#x27;]</span></span><br><span class="line"><span class="built_in">print</span>(content)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭文件</span></span><br><span class="line">f.close()</span><br><span class="line"><span class="number">12345678</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>#2.向目标url发送请求</li>
+<li>readline()</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response=urllib.request.urlopen(url)</span><br></pre></td></tr></table></figure>
+<p>readline()一次读取一行内容。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>)</span><br><span class="line"></span><br><span class="line">content = f.readline()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;第一行：<span class="subst">&#123;content&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">content = f.readline()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;第二行：<span class="subst">&#123;content&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭文件</span></span><br><span class="line">f.close()</span><br><span class="line"><span class="number">12345678910</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="1-2-3-seek"><a href="#1-2-3-seek" class="headerlink" title="1.2.3 seek()"></a>1.2.3 seek()</h5><p>作用：用来移动文件指针。</p>
+<p>语法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">文件对象.seek(偏移量, 起始位置)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>起始位置：</p>
+<ul>
+<li>0：文件开头</li>
+<li>1：当前位置</li>
+<li>2：文件结尾</li>
+</ul>
+</blockquote>
+<h4 id="3-1-关闭"><a href="#3-1-关闭" class="headerlink" title="3.1 关闭"></a>3.1 关闭</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">文件对象.close()</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="三、文件备份"><a href="#三、文件备份" class="headerlink" title="三、文件备份"></a>三、文件备份</h2><p>需求：用户输入当前目录下任意文件名，程序完成对该文件的备份功能(备份文件名为xx[备份]后缀，例如：test[备份].txt)。</p>
+<h3 id="1-步骤"><a href="#1-步骤" class="headerlink" title="1. 步骤"></a>1. 步骤</h3><ol>
+<li>接收用户输入的文件名</li>
+<li>规划备份文件名</li>
+<li>备份文件写入数据</li>
+</ol>
+<h3 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2. 代码实现"></a>2. 代码实现</h3><ol>
+<li>接收用户输入目标文件名</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">old_name = <span class="built_in">input</span>(<span class="string">&#x27;请输入您要备份的文件名：&#x27;</span>)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>规划备份文件名</p>
+<p>2.1 提取目标文件后缀</p>
+<p>2.2 组织备份的文件名，xx[备份]后缀</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2.1 提取文件后缀点的下标</span></span><br><span class="line">index = old_name.rfind(<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># print(index)  # 后缀中.的下标</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># print(old_name[:index])  # 源文件名（无后缀）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.2 组织新文件名 旧文件名 + [备份] + 后缀</span></span><br><span class="line">new_name = old_name[:index] + <span class="string">&#x27;[备份]&#x27;</span> + old_name[index:]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印新文件名（带后缀）</span></span><br><span class="line"><span class="comment"># print(new_name)</span></span><br><span class="line"><span class="number">123456789101112</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>备份文件写入数据</p>
+<p>3.1 打开源文件 和 备份文件</p>
+<p>3.2 将源文件数据写入备份文件</p>
+<p>3.3 关闭文件</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 3.1 打开文件</span></span><br><span class="line">old_f = <span class="built_in">open</span>(old_name, <span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">new_f = <span class="built_in">open</span>(new_name, <span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.2 将源文件数据写入备份文件</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    con = old_f.read(<span class="number">1024</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(con) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    new_f.write(con)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.3 关闭文件</span></span><br><span class="line">old_f.close()</span><br><span class="line">new_f.close()</span><br><span class="line"><span class="number">1234567891011121314</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-思考"><a href="#3-思考" class="headerlink" title="3. 思考"></a>3. 思考</h3><p>如果用户输入<code>.txt</code>，这是一个无效文件，程序如何更改才能限制只有有效的文件名才能备份？</p>
+<p>答：添加条件判断即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">old_name = <span class="built_in">input</span>(<span class="string">&#x27;请输入您要备份的文件名：&#x27;</span>)</span><br><span class="line"></span><br><span class="line">index = old_name.rfind(<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> index &gt; <span class="number">0</span>:</span><br><span class="line">    postfix = old_name[index:]</span><br><span class="line"></span><br><span class="line">new_name = old_name[:index] + <span class="string">&#x27;[备份]&#x27;</span> + postfix</span><br><span class="line"></span><br><span class="line">old_f = <span class="built_in">open</span>(old_name, <span class="string">&#x27;rb&#x27;</span>)</span><br><span class="line">new_f = <span class="built_in">open</span>(new_name, <span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    con = old_f.read(<span class="number">1024</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(con) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    new_f.write(con)</span><br><span class="line"></span><br><span class="line">old_f.close()</span><br><span class="line">new_f.close()</span><br><span class="line"><span class="number">123456789101112131415161718192021</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="四、文件和文件夹的操作"><a href="#四、文件和文件夹的操作" class="headerlink" title="四、文件和文件夹的操作"></a>四、文件和文件夹的操作</h2><p>在Python中文件和文件夹的操作要借助os模块里面的相关功能，具体步骤如下：</p>
+<ol>
+<li>导入os模块</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>使用<code>os</code>模块相关功能</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.函数名()</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-文件重命名"><a href="#1-文件重命名" class="headerlink" title="1. 文件重命名"></a>1. 文件重命名</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.rename(目标文件名, 新文件名)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-删除文件"><a href="#2-删除文件" class="headerlink" title="2. 删除文件"></a>2. 删除文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.remove(目标文件名)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-创建文件夹"><a href="#3-创建文件夹" class="headerlink" title="3. 创建文件夹"></a>3. 创建文件夹</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.mkdir(文件夹名字)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-删除文件夹"><a href="#4-删除文件夹" class="headerlink" title="4. 删除文件夹"></a>4. 删除文件夹</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.rmdir(文件夹名字)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-获取当前目录"><a href="#5-获取当前目录" class="headerlink" title="5. 获取当前目录"></a>5. 获取当前目录</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.getcwd()</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-改变默认目录"><a href="#6-改变默认目录" class="headerlink" title="6. 改变默认目录"></a>6. 改变默认目录</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.chdir(目录)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-获取目录列表"><a href="#7-获取目录列表" class="headerlink" title="7. 获取目录列表"></a>7. 获取目录列表</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.listdir(目录)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="五、应用案例"><a href="#五、应用案例" class="headerlink" title="五、应用案例"></a>五、应用案例</h2><p>需求：批量修改文件名，既可添加指定字符串，又能删除指定字符串。</p>
+<ul>
+<li>步骤</li>
+</ul>
+<ol>
+<li>设置添加删除字符串的的标识</li>
+<li>获取指定目录的所有文件</li>
+<li>将原有文件名添加/删除指定字符串，构造新名字</li>
+<li>os.rename()重命名</li>
+</ol>
+<ul>
+<li>代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置重命名标识：如果为1则添加指定字符，flag取值为2则删除指定字符</span></span><br><span class="line">flag = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定目录</span></span><br><span class="line">dir_name = <span class="string">&#x27;./&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取指定目录的文件列表</span></span><br><span class="line">file_list = os.listdir(dir_name)</span><br><span class="line"><span class="comment"># print(file_list)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历文件列表内的文件</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> file_list:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 添加指定字符</span></span><br><span class="line">    <span class="keyword">if</span> flag == <span class="number">1</span>:</span><br><span class="line">        new_name = <span class="string">&#x27;Python-&#x27;</span> + name</span><br><span class="line">    <span class="comment"># 删除指定字符</span></span><br><span class="line">    <span class="keyword">elif</span> flag == <span class="number">2</span>:</span><br><span class="line">        num = <span class="built_in">len</span>(<span class="string">&#x27;Python-&#x27;</span>)</span><br><span class="line">        new_name = name[num:]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 打印新文件名，测试程序正确性</span></span><br><span class="line">    <span class="built_in">print</span>(new_name)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 重命名</span></span><br><span class="line">    os.rename(dir_name+name, dir_name+new_name)</span><br><span class="line"><span class="number">1234567891011121314151617181920212223242526272829</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h2><ul>
+<li><p>文件操作步骤</p>
+<ul>
+<li>打开</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">文件对象 = <span class="built_in">open</span>(目标文件, 访问模式)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>#3.读取数据</li>
+<li><p>操作</p>
+<ul>
+<li>读</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data=response.read()</span><br><span class="line"><span class="comment">#print(data)  #打印出来的数据有ASCII码</span></span><br><span class="line"><span class="built_in">print</span>(data.decode(<span class="string">&#x27;utf-8&#x27;</span>))  <span class="comment">#decode将相应编码格式的数据转换成字符串</span></span><br></pre></td></tr></table></figure>
-
-<p>#post请求</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib.parse</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url=&#x27;http://www.iqianyue.com/mypost/&#x27;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">文件对象.read()</span><br><span class="line">文件对象.readlines()</span><br><span class="line">文件对象.readline()</span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>#构建上传的data</li>
+<li>写</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">postdata=urllib.parse.urlencode(&#123;</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;Jack&#x27;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;pass&#x27;</span>:<span class="string">&#x27;123456&#x27;</span></span><br><span class="line"></span><br><span class="line">&#125;).encode(<span class="string">&#x27;utf-8&#x27;</span>) <span class="comment">#字符串转化成字节流数据</span></span><br><span class="line"></span><br><span class="line">html=urllib.request.urlopen(url,data=postdata).read()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(html)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">文件对象.write()</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#headers针对检验头信息的反爬机制</span></span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">headers=&#123;</span><br><span class="line"><span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">request1=urllib.request.Request(<span class="string">&#x27;https://www.dianping.com/&#x27;</span>,headers=headers)<span class="comment">#Request类构建了一个完整的请求</span></span><br><span class="line">response1=urllib.request.urlopen(request1).read()</span><br><span class="line"><span class="built_in">print</span>(response1.decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#超时设置+异常处理</span></span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.error</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">20</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response1=urllib.request.urlopen(<span class="string">&#x27;http://www.ibeifeng.com/&#x27;</span>,timeout=<span class="number">0.01</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">    <span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="keyword">except</span> BaseException <span class="keyword">as</span> a: <span class="comment">#所有异常的基类</span></span><br><span class="line">        <span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-
-<h2 id="二、requests方法"><a href="#二、requests方法" class="headerlink" title="二、requests方法"></a>二、requests方法</h2><ul>
-<li><p>Requests是用python语言基于urllib编写的，采用的是Apache2 Licensed开源协议的HTTP库</p>
+<ul>
+<li>seek()</li>
+</ul>
 </li>
-<li><p>urllib还是非常不方便的，而Requests它会比urllib更加方便，可以节约我们大量的工作。</p>
-</li>
-<li><p>requests是python实现的最简单易用的HTTP库，建议爬虫使用requests库。</p>
-</li>
-<li><p>默认安装好python之后，是没有安装requests模块的，需要单独通过pip安装</p>
+<li><p>关闭</p>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="comment">#get请求</span></span><br><span class="line">r=requests.get(<span class="string">&#x27;https://www.taobao.com/&#x27;</span>)</span><br><span class="line"><span class="comment">#打印字节流数据</span></span><br><span class="line"><span class="comment"># print(r.content)</span></span><br><span class="line"><span class="comment"># print(r.content.decode(&#x27;utf-8&#x27;))  #转码</span></span><br><span class="line"><span class="built_in">print</span>(r.text)  <span class="comment">#打印文本数据</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> chardet</span><br><span class="line"><span class="comment">#自动获取到网页编码，返回字典类型</span></span><br><span class="line"><span class="built_in">print</span>(chardet.detect(r.content))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">文件对象.close()</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure></li>
+<li><p>主访问模式</p>
+<ul>
+<li>w：写，文件不存在则新建该文件</li>
+<li>r：读，文件不存在则报错</li>
+<li>a：追加</li>
+</ul>
+</li>
+<li><p>文件和文件夹操作</p>
+<ul>
+<li>重命名：<code>os.rename()</code></li>
+<li>获取当前目录：<code>os.getcwd()</code></li>
+<li>获取目录列表：<code>os.listdir()</code></li>
+</ul>
+</li>
+</ul>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">POST请求实现模拟表单登录</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="comment">#构建上传到网页的数据</span></span><br><span class="line">data=&#123;</span><br><span class="line">    <span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;Jack&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;pass&#x27;</span>:<span class="string">&#x27;123456&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#带登陆数据发送请求</span></span><br><span class="line">r=requests.post(<span class="string">&#x27;http://www.iqianyue.com/mypost/&#x27;</span>,data=data)</span><br><span class="line"><span class="built_in">print</span>(r.text)   <span class="comment">#打印请求数据</span></span><br><span class="line"><span class="comment">#将登录后的html储存在本地</span></span><br><span class="line">f=<span class="built_in">open</span>(<span class="string">&#x27;login.html&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line">f.write(r.content)  <span class="comment">#写入字节流数据</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#针对检验头信息的反爬机制headers</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="comment">#构建headers</span></span><br><span class="line">headers=&#123;</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://www.dianping.com/&#x27;</span>,headers=headers)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"><span class="built_in">print</span>(r.status_code)   <span class="comment">#状态403 被拦截了(查看状态)</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#针对检验头信息的反爬机制headers</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="comment">#构建headers</span></span><br><span class="line">headers=&#123;</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r=requests.get(<span class="string">&#x27;https://www.dianping.com/&#x27;</span>,headers=headers)</span><br><span class="line"><span class="built_in">print</span>(r.text)</span><br><span class="line"><span class="built_in">print</span>(r.status_code)   <span class="comment">#状态403 被拦截了(查看状态)</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#cookies</span></span><br><span class="line"><span class="comment">#跳过登陆，获取资源</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">f=<span class="built_in">open</span>(<span class="string">&#x27;cookie.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>)   <span class="comment">#打开cookie文件</span></span><br><span class="line"><span class="comment">#初始化cookies，声明一个空字典</span></span><br><span class="line">cookies=&#123;&#125;</span><br><span class="line"><span class="comment">#按照字符 ； 进行切割读取，返回列表数据，然后遍历</span></span><br><span class="line"><span class="comment">#split()：切割函数   strip()去除字符串前后空白</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f.read().split(<span class="string">&#x27;;&#x27;</span>):</span><br><span class="line">    <span class="comment">#split将参数设置为1，把字符串切割成两个部分</span></span><br><span class="line">    name,value=line.strip().split(<span class="string">&#x27;=&#x27;</span>,<span class="number">1</span>)</span><br><span class="line">    <span class="comment">#为空字典cookies添加内容</span></span><br><span class="line">    cookies[name]=value</span><br><span class="line">r=requests.get(<span class="string">&#x27;http://www.baidu.com&#x27;</span>,cookies=cookies)</span><br><span class="line">data=r.text</span><br><span class="line">f1=<span class="built_in">open</span>(<span class="string">&#x27;baidu.html&#x27;</span>,<span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">f1.write(data)</span><br><span class="line">f1.close()</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置代理（网站搜索免费代理ip）</span></span><br><span class="line"><span class="comment">#解决网页封IP的问题</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">proxies=&#123;</span><br><span class="line">    <span class="comment">#&#x27;协议&#x27;:&#x27;ip:端口号&#x27;</span></span><br><span class="line">    <span class="string">&#x27;HTTP&#x27;</span>:<span class="string">&#x27;222.83.160.37：61205&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">req=requests.get(<span class="string">&#x27;http://www.taobao.com/&#x27;</span>,proxies=proxies)</span><br><span class="line"><span class="built_in">print</span>(req.text)</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置超时</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> requests.exceptions <span class="keyword">import</span> Timeout</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response = requests.get(<span class="string">&quot;http://www.ibeifeng.com &quot;</span>, timeout=<span class="number">0.01</span>)</span><br><span class="line">    <span class="built_in">print</span>(response.status_code)</span><br><span class="line"><span class="keyword">except</span> Timeout:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;访问超时！&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="三、BS4-BeautifulSoup4解析"><a href="#三、BS4-BeautifulSoup4解析" class="headerlink" title="三、BS4- BeautifulSoup4解析"></a>三、BS4- BeautifulSoup4解析</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&lt;html&gt;&lt;head&gt;&lt;title&gt;The Dormouse&#x27;s story&lt;/title&gt;&lt;/head&gt;</span></span><br><span class="line"><span class="string">&lt;body&gt;</span></span><br><span class="line"><span class="string">&lt;p class=&quot;title&quot;&gt;&lt;b&gt;The Dormouse&#x27;s story&lt;/b&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;p class=&quot;story&quot;&gt;Once upon a time there were three little sisters; and their names were</span></span><br><span class="line"><span class="string">&lt;a href=&quot;http://example.com/elsie&quot; class=&quot;sister&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;,</span></span><br><span class="line"><span class="string">&lt;a href=&quot;http://example.com/lacie&quot; class=&quot;sister&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt; and</span></span><br><span class="line"><span class="string">&lt;a href=&quot;http://example.com/tillie&quot; class=&quot;sister&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;;</span></span><br><span class="line"><span class="string">and they lived at the bottom of a well.&lt;/p&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;p class=&quot;story&quot;&gt;...&lt;/p&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># #创建一个BS对象</span></span><br><span class="line">soup=BeautifulSoup(html,<span class="string">&#x27;html.parser&#x27;</span>) <span class="comment">#html.parser默认解析器</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(soup))</span><br><span class="line"><span class="comment"># 结构化输出</span></span><br><span class="line"><span class="built_in">print</span>(soup.prettify())</span><br><span class="line"><span class="comment">#1获取标签(只能获取第一条对应的标签)</span></span><br><span class="line"><span class="built_in">print</span>(soup.p) <span class="comment">#获取p标签</span></span><br><span class="line"><span class="built_in">print</span>(soup.a) <span class="comment">#获取a标签</span></span><br><span class="line"><span class="built_in">print</span>(soup.title) <span class="comment">#获取title</span></span><br><span class="line"><span class="comment">#2获取标签内容</span></span><br><span class="line"><span class="built_in">print</span>(soup.title.string)</span><br><span class="line"><span class="built_in">print</span>(soup.a.string)</span><br><span class="line"><span class="built_in">print</span>(soup.body.string) <span class="comment">#如果标签中有多个子标签返回None</span></span><br><span class="line"><span class="built_in">print</span>(soup.head.string) <span class="comment">#如果标签中有一个子标签返回子标签里的文本</span></span><br><span class="line"><span class="comment">#3获取属性</span></span><br><span class="line"><span class="built_in">print</span>(soup.a.attrs) <span class="comment">#返回字典</span></span><br><span class="line"><span class="built_in">print</span>(soup.a[<span class="string">&#x27;id&#x27;</span>]) <span class="comment">#得到指定属性值</span></span><br><span class="line"><span class="comment">#4操作字节点</span></span><br><span class="line"><span class="built_in">print</span>(soup.p.contents) <span class="comment">#得到标签下所有子节点</span></span><br><span class="line"><span class="built_in">print</span>(soup.p.children) <span class="comment">#得到标签下所有子节点的迭代对象</span></span><br><span class="line"><span class="comment">#5操作父节点</span></span><br><span class="line"><span class="built_in">print</span>(soup.p.parent) <span class="comment">#得到标签p的父节点其内部的所有内容</span></span><br><span class="line"><span class="built_in">print</span>(soup.p.parents) <span class="comment"># 得到标签p的父节点的迭代对象</span></span><br><span class="line"><span class="comment">#6操作兄弟节点(同级的节点)</span></span><br><span class="line"><span class="comment">#next_sibling和previous_sibling分别获取节点的下一个和上一个兄弟元素</span></span><br><span class="line"><span class="built_in">print</span>(soup.a.next_sibling)</span><br><span class="line"><span class="built_in">print</span>(soup.a.previous_sibling)</span><br><span class="line"></span><br><span class="line"><span class="comment">#二.搜索文档数</span></span><br><span class="line"><span class="comment">#1标签名</span></span><br><span class="line"><span class="comment">#查询所有a标签</span></span><br><span class="line">res1=soup.find_all(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(res1)</span><br><span class="line"><span class="comment">#获取所有a标签下属性为class=&quot;sister&quot;的标签（</span></span><br><span class="line"><span class="comment">#使用 class 做参数会导致语法错误，这里也要用class_）</span></span><br><span class="line"><span class="built_in">print</span>(soup.find_all(<span class="string">&#x27;a&#x27;</span>,class_=<span class="string">&quot;sister&quot;</span>))</span><br><span class="line"><span class="comment">#2正则表达式</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="comment">#查询所有包含d字符的标签</span></span><br><span class="line">res2=soup.find_all(re.<span class="built_in">compile</span>(<span class="string">&#x27;d+&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(res2)</span><br><span class="line"><span class="comment">#3列表</span></span><br><span class="line"><span class="comment">#查找所有的title标签和a标签</span></span><br><span class="line">res3=soup.find_all([<span class="string">&#x27;title&#x27;</span>,<span class="string">&#x27;a&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(res3)</span><br><span class="line"><span class="comment">#4关键词</span></span><br><span class="line"><span class="comment">#查询属性id=&#x27;link1&#x27;的标签</span></span><br><span class="line">res4=soup.find_all(<span class="built_in">id</span>=<span class="string">&#x27;link1&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(res4)</span><br><span class="line"><span class="comment">#5内容匹配</span></span><br><span class="line">res5=soup.find_all(text=<span class="string">&#x27;Tillie&#x27;</span>)  <span class="comment">#文本匹配</span></span><br><span class="line">res55=soup.find_all(text=re.<span class="built_in">compile</span>(<span class="string">&#x27;Dormouse&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(res55)</span><br><span class="line"><span class="comment">#6嵌套选择</span></span><br><span class="line"><span class="built_in">print</span>(soup.find_all(<span class="string">&#x27;p&#x27;</span>))</span><br><span class="line"><span class="comment">#查看所有p标签下所有的a标签</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> soup.find_all(<span class="string">&#x27;p&#x27;</span>):</span><br><span class="line">    <span class="built_in">print</span>(i.find_all(<span class="string">&#x27;a&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#三.CSS选择器</span></span><br><span class="line"><span class="comment">#1根据标签查询对象</span></span><br><span class="line">res6=soup.select(<span class="string">&#x27;a&#x27;</span>) <span class="comment">#返回列表</span></span><br><span class="line"><span class="built_in">print</span>(res6) <span class="comment">#得到所有的a标签</span></span><br><span class="line"><span class="comment">#2根据ID属性查询标签对象(id用#)</span></span><br><span class="line"><span class="built_in">print</span>(soup.select(<span class="string">&#x27;#link2&#x27;</span>))</span><br><span class="line"><span class="comment">#3根据class属性查询标签对象(class用.)</span></span><br><span class="line"><span class="built_in">print</span>(soup.select(<span class="string">&#x27;.sister&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(soup.select(<span class="string">&#x27;.sister&#x27;</span>)[<span class="number">2</span>].get_text()) <span class="comment">#获取文本内容</span></span><br><span class="line"><span class="comment">#4属性选择(获取a标签里=href属性值的标签)</span></span><br><span class="line"><span class="built_in">print</span>(soup.select(<span class="string">&#x27;a[href=&quot;http://example.com/elsie&quot;]&#x27;</span>))</span><br><span class="line"><span class="comment">#5包含选择(获取)</span></span><br><span class="line"><span class="built_in">print</span>(soup.select(<span class="string">&#x27;p a#link1&#x27;</span>))</span><br><span class="line"><span class="comment">#6并列选择</span></span><br><span class="line"><span class="built_in">print</span>(soup.select(<span class="string">&#x27;a#link1,a#link2&#x27;</span>))</span><br><span class="line"><span class="comment">#7得到标签内容</span></span><br><span class="line">res7=soup.select(<span class="string">&#x27;p a.sister&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> res7:</span><br><span class="line">    <span class="built_in">print</span>(i.get_text())</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#爬取51job主页12个职位</span></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">url=<span class="string">&#x27;https://www.51job.com/&#x27;</span></span><br><span class="line">headers=&#123;<span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36&#x27;</span>&#125;</span><br><span class="line">html=requests.get(url,headers=headers)</span><br><span class="line">data=html.content.decode(<span class="string">&#x27;gbk&#x27;</span>)</span><br><span class="line">soup=BeautifulSoup(data,<span class="string">&#x27;html.parser&#x27;</span>)</span><br><span class="line"><span class="comment">#获取span标签，class_=&quot;at&quot;属性</span></span><br><span class="line">span=soup.find_all(<span class="string">&#x27;span&#x27;</span>,class_=<span class="string">&quot;at&quot;</span>)</span><br><span class="line"><span class="comment"># for i in span:</span></span><br><span class="line"><span class="comment">#     print(i.get_text())</span></span><br><span class="line"><span class="comment">#select方法（CSS选择器）</span></span><br><span class="line">span1=soup.select(<span class="string">&#x27;span[class=&quot;at&quot;]&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> m <span class="keyword">in</span> span1:</span><br><span class="line">    <span class="built_in">print</span>(m.get_text())</span><br></pre></td></tr></table></figure>
-
-<h2 id="四、XPath语法"><a href="#四、XPath语法" class="headerlink" title="四、XPath语法"></a>四、XPath语法</h2><p>XPath 是一门在 XML 文档中查找信息的语言。</p>
-<p>XPath 可用来在 XML 文档中对元素和属性进行遍历</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line">text=<span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string"> &lt;html&gt;</span></span><br><span class="line"><span class="string">        &lt;head&gt;</span></span><br><span class="line"><span class="string">            &lt;title&gt;春晚&lt;/title&gt;</span></span><br><span class="line"><span class="string">        &lt;/head&gt;</span></span><br><span class="line"><span class="string">        &lt;body&gt;</span></span><br><span class="line"><span class="string">            &lt;h1 name=&quot;title&quot;&gt;个人简介&lt;/h1&gt;</span></span><br><span class="line"><span class="string">            &lt;div name=&quot;desc&quot;&gt;</span></span><br><span class="line"><span class="string">                &lt;p name=&quot;name&quot;&gt;姓名：&lt;span&gt;岳云鹏&lt;/span&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="string">                &lt;p name=&quot;addr&quot;&gt;住址：中国 河南&lt;/p&gt;</span></span><br><span class="line"><span class="string">                &lt;p name=&quot;info&quot;&gt;代表作：五环之歌&lt;/p&gt;</span></span><br><span class="line"><span class="string">            &lt;/div&gt;</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment">#初始化</span></span><br><span class="line">html=etree.HTML(text)</span><br><span class="line"><span class="comment"># result=etree.tostring(html)   #字节流</span></span><br><span class="line"><span class="comment"># print(result.decode(&#x27;utf-8&#x27;))</span></span><br><span class="line"><span class="comment">#查询所有的p标签</span></span><br><span class="line">p_x=html.xpath(<span class="string">&#x27;//p&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(p_x)</span><br><span class="line"><span class="comment">#查询所有p标签的文本,用text只能拿到该标签下的文本，不包括子标签</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> p_x:</span><br><span class="line">    <span class="built_in">print</span>(i.text)   <span class="comment">#发现&lt;span&gt;没有拿到</span></span><br><span class="line"><span class="comment">#优化，用string（）拿标签内部的所有文本</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> p_x:</span><br><span class="line">    <span class="built_in">print</span>(i.xpath(<span class="string">&#x27;string(.)&#x27;</span>))</span><br><span class="line"><span class="comment"># 查询所有name属性的值</span></span><br><span class="line">attr_name=html.xpath(<span class="string">&#x27;//@name&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(attr_name)</span><br><span class="line"><span class="comment">#查询出所有包含name属性的标签</span></span><br><span class="line">attr_name1=html.xpath(<span class="string">&#x27;//*[@name]&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(attr_name1)</span><br></pre></td></tr></table></figure>
       </div>
       
         <div class="copyright">
@@ -830,7 +1015,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/xfrl/2020/11/13/python爬虫方法/" target="_blank" title="python爬虫方法介绍">https://xfrl.github.io/xfrl/2020/11/13/python爬虫方法/</a>
+    <a href="/xfrl/2020/06/26/python文件操作/" target="_blank" title="Python-文件操作">https://xfrl.github.io/xfrl/2020/06/26/python文件操作/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -850,18 +1035,20 @@
 
   
   <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="https://img11.360buyimg.com/ddimg/jfs/t1/182872/30/9517/3706433/60cab6b2E526df54d/79cd3d8c9eeb7efa.png" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="https://img11.360buyimg.com/ddimg/jfs/t1/194939/10/15733/1951575/6103eb29E70e73e3f/d7c7b0fbd833b86f.png" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/xfrl/2020/12/01/python%20%E7%88%AC%E8%99%AB%E4%B9%8Bselenium/" class="post-nav-link">
+    <a href="/xfrl/2020/07/03/python%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="post-nav-link">
       <div class="title">
         <i class="fa fa-angle-left"></i> Prev:
-        <div>python可视化爬虫</div>
+        <div>Python-系统</div>
       </div>
       
       <!-- <div class="content">
-        python可视化爬虫之selenium可视化爬虫前言之所以把selenium爬虫称之为可视化爬虫
-主要是相较于前面所提
+        一、系统需求使用面向对象编程思想完成学员管理系统的开发，具体如下：
+
+系统要求：学员数据存储在文件中
+系统功能：添加学员
       </div> -->
     </a>
   </div>
@@ -870,19 +1057,17 @@
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="https://img11.360buyimg.com/ddimg/jfs/t1/194939/10/15733/1951575/6103eb29E70e73e3f/d7c7b0fbd833b86f.png" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="https://img12.360buyimg.com/ddimg/jfs/t1/183148/23/16844/4164537/6103e934Ea66187eb/cc2134e788105bb8.png" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/xfrl/2020/07/03/python%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="post-nav-link">
+    <a href="/xfrl/2020/06/22/python%E4%BC%AA%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7/" class="post-nav-link">
       <div class="title">
         Next: <i class="fa fa-angle-right"></i>
-        <div>Python-系统</div>
+        <div>Python伪私有属性</div>
       </div>
       <!-- <div class="content">
-        一、系统需求使用面向对象编程思想完成学员管理系统的开发，具体如下：
-
-系统要求：学员数据存储在文件中
-系统功能：添加学员
+        一、引言我们都知道：在Python中，没有类似private之类的关键字来声明私有方法或属性。
+Python中要声明私有
       </div> -->
     </a>
   </div>
