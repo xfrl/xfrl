@@ -158,15 +158,15 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   }
 }
 ::-moz-selection {
-  background: rgba(75,92,126,0.8);
+  background: rgba(75,92,126,0.1);
   color: #fff;
 }
 ::selection {
-  background: rgba(75,92,126,0.8);
+  background: rgba(75,92,126,0.1);
   color: #fff;
 }
 .bg-floor {
-  background: #fff;
+  background: url("https://img11.360buyimg.com/ddimg/jfs/t1/191756/22/17522/5050612/6110d4feE50ef25a0/3f67a81b74fd1ec7.png");
   background-size: cover;
   transition: all 0.3s;
 }
@@ -442,7 +442,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   height: 300px;
   display: flex;
   margin-top: 30px;
-  background: #fff;
+  background: rgba(255,255,255,0.1);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -645,7 +645,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   color: #273849;
   width: 300px;
   padding: 0 10px;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.5);
   transition: width 0.3s;
 }
 .toc-aside .toc-content {
@@ -691,7 +691,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   letter-spacing: 0;
   margin: 0;
   overflow-x: hidden;
-  background-color: #fff;
+  background-color: rgba(255,255,255,0.5);
   border-radius: 10px;
   box-shadow: 0 0 5px #ccc;
   font-family: -apple-system, BlinkMacSystemFont, PingFang SC, Segoe UI, Microsoft YaHei, Hiragino Sans GB, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -761,7 +761,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
   font-size: 0.91rem;
   color: #d63200;
-  background-color: #f8f8f8;
+  background-color: rgba(248,248,248,0.5);
   border-radius: 2px;
 }
 .post-detail .codeBox {
@@ -990,7 +990,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
 }
 .post-detail table tr:nth-child(2n),
 .post-detail thead {
-  background-color: #fafafa;
+  background-color: rgba(250,250,250,0.5);
 }
 .post-detail table tr th {
   font-weight: bold;
@@ -1393,7 +1393,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   width: 60%;
   margin: 20px auto;
   margin-bottom: 0;
-  background: #fff;
+  background: rgba(255,255,255,0.1);
   box-shadow: 0 1px 20px -6px rgba(0,0,0,0.5);
   padding: 20px;
   padding-bottom: 40px;
@@ -1548,7 +1548,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   box-sizing: border-box;
   transition: all 0.3s;
   position: relative;
-  background: url("https://img10.360buyimg.com/ddimg/jfs/t1/166587/8/21344/72069/6088c24fEda5fdeb6/f9730ab637b7ca47.png");
+  background: url("");
 }
 .motto .motto-title {
   text-align: center;
@@ -1735,7 +1735,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   margin: 2em 0 0;
   padding: 0.5em 1em;
   border-left: 3px solid #4b5c7e;
-  background-color: #f9f9f9;
+  background-color: rgba(249,249,249,0.5);
   list-style: none;
   margin-top: 20px;
 }
@@ -3038,7 +3038,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
 }
 .post-detail blockquote {
   border-left: 4px solid #4b5c7e;
-  background-color: #f3f5f7;
+  background-color: rgba(243,245,247,0.5);
 }
 .toc-link.is-active-link::before {
   background-color: #4b5c7e;
@@ -3477,18 +3477,18 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   border-left-style: solid;
   border-radius: 4px;
   margin: 1rem 0;
-  background-color: #f3f5f7;
+  background-color: rgba(243,245,247,0.5);
   border-color: #4b5c7e;
   color: #2c3e50;
   position: relative;
 }
 .note.warning {
   border-color: #e6a23c;
-  background-color: #fdf6ec;
+  background-color: rgba(253,246,236,0.5);
 }
 .note.info {
   border-color: #409eff;
-  background-color: #edf6ff;
+  background-color: rgba(237,246,255,0.5);
 }
 .note.info::before {
   content: '\f129';
@@ -3556,11 +3556,11 @@ pre:hover::-webkit-scrollbar-thumb:hover,
 }
 .note.danger {
   border-color: #f66;
-  background-color: #fff0f0;
+  background-color: rgba(255,240,240,0.5);
 }
 .note.success {
   border-color: #67c23a;
-  background-color: #f0f9ec;
+  background-color: rgba(240,249,236,0.5);
 }
 .note.success::before {
   content: '\f00c';
@@ -3988,7 +3988,7 @@ span.p.small {
   margin-left: 50%;
   transform: translateX(-50%);
   margin-right: 1em;
-  background-color: #f6f6f6;
+  background-color: rgba(246,246,246,0.5);
   display: inline-flex;
   align-items: center;
   cursor: pointer;
@@ -4582,7 +4582,7 @@ div.timenode .body {
   margin: 4px 0 16px 24px;
   padding: 16px;
   border-radius: 12px;
-  background-color: #f6f6f6;
+  background-color: rgba(246,246,246,0.5);
   display: inline-block;
 }
 div.timenode .body:empty {
