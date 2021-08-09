@@ -21,6 +21,8 @@
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/xfrl/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
   <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/css/GalMenu.css">
+
 
   
     <script>
@@ -69,11 +71,13 @@
   <script src="/xfrl/js/jquery3.5.1.js"></script>
   <script src="/xfrl/js/vue2.6.11.js"></script>
   <link href="/xfrl/js/danmu/barrager.css" rel="stylesheet">
-<script src="/xfrl/js/danmu/jquery.barrager.js"></script>
+  <script src="/xfrl/js/danmu/jquery.barrager.js"></script>
+
   <body>
     <!-- 页面预加载动画 -->
 
     <!-- 判断是否为黑夜模式 -->
+    
     <script>
       let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
 
@@ -2180,6 +2184,7 @@ Python中要声明私有
 
 
     </main>
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5qu2gg825f6&amp;m=2&amp;c=007eff&amp;cr1=ffffff&amp;f=comic_sans_ms&amp;l=33&amp;bv=100&amp;z=11&amp;he=1&amp;hc=83bacf&amp;rs=50&amp;as=50&amp;cr0=dc7575" async="async"></script>
     <div class="footer bg-color">
   <div class="footer-main">
     <div class="link">
@@ -2279,7 +2284,7 @@ Python中要声明私有
 <script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
     
-
+    
     <!-- 图片放大 -->
     
       <script src="/xfrl/js/fancybox/jquery.fancybox.min.js"></script>
@@ -2440,5 +2445,46 @@ Python中要声明私有
     </script>
     
     <script src="/xfrl/js/app.js"></script>
+
+    <!--动态线条背景-->
+    <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+
+    
+   	<div class="GalMenu GalDropDown">
+	      <div class="circle" id="gal">
+	        <div class="ring">
+	          <a href="/" class="menuItem">首页</a>
+	          <a href="javascript:history.go(1);" class="menuItem">前进</a>
+	          <a href="javascript:$('html,body').animate({scrollTop:0},500);" class="menuItem">顶部</a>
+	          <a href="javascript:location.reload();" class="menuItem">刷新</a>
+			  <a href="/xfrl/friends" class="menuItem">留言</a>
+	          <a href="javascript:history.go(-1);" class="menuItem">后退</a>
+			</div>
+			
+		  </div>
+	</div>
+	<script type="text/javascript">
+	var items = document.querySelectorAll('.menuItem'); 
+	for (var i = 0, l = items.length; i < l; i++) {
+        items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+        items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+      }
+	</script>
+	<script>window.jQuery || document.write('<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/jquery-2.1.1.min.js"><\/script>')</script>	
+	
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/GalMenu.js"></script>
+
+	<script type="text/javascript">
+    	$(document).ready(function() {
+        $('body').GalMenu({
+          'menu': 'GalDropDown'
+        })
+      });
+	</script>
+
+
+
   </body>
 </html>

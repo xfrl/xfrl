@@ -21,6 +21,8 @@
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/xfrl/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
   <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/css/GalMenu.css">
+
 
   
     <script>
@@ -69,11 +71,13 @@
   <script src="/xfrl/js/jquery3.5.1.js"></script>
   <script src="/xfrl/js/vue2.6.11.js"></script>
   <link href="/xfrl/js/danmu/barrager.css" rel="stylesheet">
-<script src="/xfrl/js/danmu/jquery.barrager.js"></script>
+  <script src="/xfrl/js/danmu/jquery.barrager.js"></script>
+
   <body>
     <!-- 页面预加载动画 -->
 
     <!-- 判断是否为黑夜模式 -->
+    
     <script>
       let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
 
@@ -693,6 +697,7 @@
 </div>
 
     </main>
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5qu2gg825f6&amp;m=2&amp;c=007eff&amp;cr1=ffffff&amp;f=comic_sans_ms&amp;l=33&amp;bv=100&amp;z=11&amp;he=1&amp;hc=83bacf&amp;rs=50&amp;as=50&amp;cr0=dc7575" async="async"></script>
     <div class="footer bg-color">
   <div class="footer-main">
     <div class="link">
@@ -792,7 +797,7 @@
 <script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
     
-
+    
     <!-- 图片放大 -->
     
       <script src="/xfrl/js/fancybox/jquery.fancybox.min.js"></script>
@@ -953,50 +958,49 @@
     </script>
     
     <script src="/xfrl/js/app.js"></script>
-  </body>
-</html>></ul>
 
-            </div>
-            <div class="post-categories">
-              
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/xfrl/categories/python/">python</a>
-</div>
+    <!--动态线条背景-->
+    <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
 
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              <a href="/xfrl/2020/06/22/python%E4%BC%AA%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7/" class="lazyload" data-original="https://img12.360buyimg.com/ddimg/jfs/t1/183148/23/16844/4164537/6103e934Ea66187eb/cc2134e788105bb8.png" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            一、引言我们都知道：在Python中，没有类似private之类的关键字来声明私有方法或属性。
-Python中要声明私有属性，需要在属性前加上双下划线（但是结尾处不能有双下划线），如：self.__a。然而这样的什么方式并不是真正的私有，而
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/xfrl/2020/06/22/python%E4%BC%AA%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7/">
-            <i class="iconfont iconmore" style="float: right;" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/xfrl/2020/06/22/python%E4%BC%AA%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7/" class="lazyload" data-original="https://img12.360buyimg.com/ddimg/jfs/t1/183148/23/16844/4164537/6103e934Ea66187eb/cc2134e788105bb8.png" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
     
-    <article class="post" data-aos="fade-up"
-      style="">
-      <div class="post-main">
-        <div class="post-info">
+   	<div class="GalMenu GalDropDown">
+	      <div class="circle" id="gal">
+	        <div class="ring">
+	          <a href="/" class="menuItem">首页</a>
+	          <a href="javascript:history.go(1);" class="menuItem">前进</a>
+	          <a href="javascript:$('html,body').animate({scrollTop:0},500);" class="menuItem">顶部</a>
+	          <a href="javascript:location.reload();" class="menuItem">刷新</a>
+			  <a href="/xfrl/friends" class="menuItem">留言</a>
+	          <a href="javascript:history.go(-1);" class="menuItem">后退</a>
+			</div>
+			
+		  </div>
+	</div>
+	<script type="text/javascript">
+	var items = document.querySelectorAll('.menuItem'); 
+	for (var i = 0, l = items.length; i < l; i++) {
+        items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+        items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+      }
+	</script>
+	<script>window.jQuery || document.write('<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/jquery-2.1.1.min.js"><\/script>')</script>	
+	
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/GalMenu.js"></script>
+
+	<script type="text/javascript">
+    	$(document).ready(function() {
+        $('body').GalMenu({
+          'menu': 'GalDropDown'
+        })
+      });
+	</script>
+
+
+
+  </body>
+</html> class="post-info">
           <div class="post-time">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
             <span class="post-time">2020-06-19</span>
@@ -1275,6 +1279,7 @@ Python中要声明私有属性，需要在属性前加上双下划线（但是�
 </div>
 
     </main>
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5qu2gg825f6&amp;m=2&amp;c=007eff&amp;cr1=ffffff&amp;f=comic_sans_ms&amp;l=33&amp;bv=100&amp;z=11&amp;he=1&amp;hc=83bacf&amp;rs=50&amp;as=50&amp;cr0=dc7575" async="async"></script>
     <div class="footer bg-color">
   <div class="footer-main">
     <div class="link">
@@ -1374,7 +1379,7 @@ Python中要声明私有属性，需要在属性前加上双下划线（但是�
 <script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
     
-
+    
     <!-- 图片放大 -->
     
       <script src="/xfrl/js/fancybox/jquery.fancybox.min.js"></script>
@@ -1535,5 +1540,46 @@ Python中要声明私有属性，需要在属性前加上双下划线（但是�
     </script>
     
     <script src="/xfrl/js/app.js"></script>
+
+    <!--动态线条背景-->
+    <script type="text/javascript"
+    color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+
+    
+   	<div class="GalMenu GalDropDown">
+	      <div class="circle" id="gal">
+	        <div class="ring">
+	          <a href="/" class="menuItem">首页</a>
+	          <a href="javascript:history.go(1);" class="menuItem">前进</a>
+	          <a href="javascript:$('html,body').animate({scrollTop:0},500);" class="menuItem">顶部</a>
+	          <a href="javascript:location.reload();" class="menuItem">刷新</a>
+			  <a href="/xfrl/friends" class="menuItem">留言</a>
+	          <a href="javascript:history.go(-1);" class="menuItem">后退</a>
+			</div>
+			
+		  </div>
+	</div>
+	<script type="text/javascript">
+	var items = document.querySelectorAll('.menuItem'); 
+	for (var i = 0, l = items.length; i < l; i++) {
+        items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+        items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+      }
+	</script>
+	<script>window.jQuery || document.write('<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/jquery-2.1.1.min.js"><\/script>')</script>	
+	
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/GalMenu.js"></script>
+
+	<script type="text/javascript">
+    	$(document).ready(function() {
+        $('body').GalMenu({
+          'menu': 'GalDropDown'
+        })
+      });
+	</script>
+
+
+
   </body>
 </html>
