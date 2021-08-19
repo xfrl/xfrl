@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Python-异常 | xfrl&#39;s blog</title>
+  <title>火红的萨日朗 | xfrl&#39;s blog</title>
 
   
     
@@ -701,7 +701,7 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="https://img13.360buyimg.com/ddimg/jfs/t1/187894/7/15764/3023130/6103eb53Ed563fe17/a00af52ccc1825d8.png" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="https://img12.360buyimg.com/ddimg/jfs/t1/194147/28/18963/1198466/611dffe0E0da1461f/a02c94d0971ed832.png" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
@@ -712,7 +712,7 @@
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
           <script>
             var typed = new Typed("#post-detail-header-title", {
-              strings: ['Python-异常'],
+              strings: ['火红的萨日朗'],
               startDelay: 100,
               typeSpeed: 100,
               loop: false,
@@ -737,7 +737,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2020-06-14</span>
+        <span class="post-time">2021-08-19</span>
       </div>
       
       <div class="post-tags-categories">
@@ -745,8 +745,8 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/xfrl/tags/py%E5%9F%BA%E7%A1%80/" class="">
-              py基础
+            <a href="/xfrl/tags/Me/" class="">
+              Me
             </a>
           
         </div>
@@ -755,195 +755,64 @@
         <div class="categories">
           <i class="iconfont iconbookmark1"></i>
           
-            <a href="/xfrl/categories/python/" class="">
-              python
+            <a href="/xfrl/categories/Person/" class="">
+              Person
             </a>
           
         </div>
         
       </div>
       <div class="post-content">
-        <h2 id="一、了解异常"><a href="#一、了解异常" class="headerlink" title="一、了解异常"></a>一、了解异常</h2><p>当检测到一个错误时，解释器就无法继续执行了，反而出现了一些错误的提示，这就是所谓的”异常”。</p>
-<p>例如：以<code>r</code>方式打开一个不存在的文件。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FileNotFoundError: [Errno <span class="number">2</span>] No such file <span class="keyword">or</span> directory: <span class="string">&#x27;test.txt&#x27;</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=930 height=86 src="//music.163.com/outchain/player?type=2&id=1825963848&auto=1&height=66"></iframe>
 
-<h2 id="二、异常的写法"><a href="#二、异常的写法" class="headerlink" title="二、异常的写法"></a>二、异常的写法</h2><h3 id="1-语法"><a href="#1-语法" class="headerlink" title="1. 语法"></a>1. 语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    可能发生错误的代码</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    如果出现异常执行的代码</span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
+<p>找到很多好曲子，就会一个劲的听，直到不想听了，再去找其他的曲子，然后再重复，多少年过去了，慢慢积攒沉淀，或偶尔听到以前挚爱的歌都会回想起听这首曲子时自己的生活和状态，很多时候不单单是在听曲子，而是在听回忆。这体验如梦初醒，如痴如画。像一件件艺术幻灯片，而这就是我喜欢的。（听歌前记得暂停左下角音乐盒子）</p>
+<pre><code>                                                    火红的萨日朗                                                            
 
-<h3 id="2-快速体验"><a href="#2-快速体验" class="headerlink" title="2. 快速体验"></a>2. 快速体验</h3><p>需求：尝试以<code>r</code>模式打开文件，如果文件不存在，则以<code>w</code>方式打开。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-捕获指定异常"><a href="#3-捕获指定异常" class="headerlink" title="3. 捕获指定异常"></a>3. 捕获指定异常</h3><h4 id="3-1-语法"><a href="#3-1-语法" class="headerlink" title="3.1 语法"></a>3.1 语法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    可能发生错误的代码</span><br><span class="line"><span class="keyword">except</span> 异常类型:</span><br><span class="line">    如果捕获到该异常类型执行的代码</span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="3-2-体验"><a href="#3-2-体验" class="headerlink" title="3.2 体验"></a>3.2 体验</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(num)</span><br><span class="line"><span class="keyword">except</span> NameError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;有错误&#x27;</span>)</span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意：</p>
-<ol>
-<li>如果尝试执行的代码的异常类型和要捕获的异常类型不一致，则无法捕获异常。</li>
-<li>一般try下方只放一行尝试执行的代码。</li>
-</ol>
-</blockquote>
-<h4 id="3-3-捕获多个指定异常"><a href="#3-3-捕获多个指定异常" class="headerlink" title="3.3 捕获多个指定异常"></a>3.3 捕获多个指定异常</h4><p>当捕获多个异常时，可以把要捕获的异常类型的名字，放到<code>except</code>后，并使用元组的方式进行书写。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">1</span>/<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">except</span> (NameError, ZeroDivisionError):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;有错误&#x27;</span>)</span><br><span class="line"><span class="number">12345</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="3-4-捕获异常描述信息"><a href="#3-4-捕获异常描述信息" class="headerlink" title="3.4 捕获异常描述信息"></a>3.4 捕获异常描述信息</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(num)</span><br><span class="line"><span class="keyword">except</span> (NameError, ZeroDivisionError) <span class="keyword">as</span> result:</span><br><span class="line">    <span class="built_in">print</span>(result)</span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="3-5-捕获所有异常"><a href="#3-5-捕获所有异常" class="headerlink" title="3.5 捕获所有异常"></a>3.5 捕获所有异常</h4><p><code>Exception</code>是所有程序异常类的父类。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(num)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> result:</span><br><span class="line">    <span class="built_in">print</span>(result)</span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-异常的else"><a href="#4-异常的else" class="headerlink" title="4. 异常的else"></a>4. 异常的else</h3><p><code>else</code>表示的是如果没有异常要执行的代码。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> result:</span><br><span class="line">    <span class="built_in">print</span>(result)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;我是else，是没有异常的时候执行的代码&#x27;</span>)</span><br><span class="line"><span class="number">123456</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="5-异常的finally"><a href="#5-异常的finally" class="headerlink" title="5. 异常的finally"></a>5. 异常的finally</h3><p><code>finally</code>表示的是无论是否异常都要执行的代码，例如关闭文件。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> result:</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;没有异常，真开心&#x27;</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    f.close()</span><br><span class="line"><span class="number">12345678</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="三、异常的传递"><a href="#三、异常的传递" class="headerlink" title="三、异常的传递"></a>三、异常的传递</h2><p>需求：</p>
-<ol>
-<li><p>尝试只读方式打开test.txt文件，如果文件存在则读取文件内容，文件不存在则提示用户即可。</p>
-</li>
-<li><p>读取内容要求：尝试循环读取内容，读取过程中如果检测到用户意外终止程序，则<code>except</code>捕获异常并提示用户。</p>
-</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            content = f.readline()</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(content) == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            time.sleep(<span class="number">2</span>)</span><br><span class="line">            <span class="built_in">print</span>(content)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="comment"># 如果在读取文件的过程中，产生了异常，那么就会捕获到</span></span><br><span class="line">        <span class="comment"># 比如 按下了 ctrl+c</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;意外终止了读取数据&#x27;</span>)</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        f.close()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;关闭文件&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;没有这个文件&quot;</span>)</span><br><span class="line"><span class="number">12345678910111213141516171819</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="四、自定义异常"><a href="#四、自定义异常" class="headerlink" title="四、自定义异常"></a>四、自定义异常</h2><p>在Python中，抛出自定义异常的语法为<code>raise 异常类对象</code>。</p>
-<p>需求：密码长度不足，则报异常（用户输入密码，如果输入的长度不足3位，则报错，即抛出自定义异常，并捕获该异常）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 自定义异常类，继承Exception</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ShortInputError</span>(<span class="params">Exception</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, length, min_len</span>):</span></span><br><span class="line">        self.length = length</span><br><span class="line">        self.min_len = min_len</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 设置抛出异常的描述信息</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&#x27;你输入的长度是<span class="subst">&#123;self.length&#125;</span>, 不能少于<span class="subst">&#123;self.min_len&#125;</span>个字符&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        con = <span class="built_in">input</span>(<span class="string">&#x27;请输入密码：&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(con) &lt; <span class="number">3</span>:</span><br><span class="line">            <span class="keyword">raise</span> ShortInputError(<span class="built_in">len</span>(con), <span class="number">3</span>)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> result:</span><br><span class="line">        <span class="built_in">print</span>(result)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;密码已经输入完成&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">main()</span><br><span class="line"><span class="number">1234567891011121314151617181920212223</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="五、模块"><a href="#五、模块" class="headerlink" title="五、模块"></a>五、模块</h2><p>Python 模块(Module)，是一个 Python 文件，以 .py 结尾，包含了 Python 对象定义和Python语句。</p>
-<p>模块能定义函数，类和变量，模块里也能包含可执行的代码。</p>
-<h3 id="1-导入模块"><a href="#1-导入模块" class="headerlink" title="1. 导入模块"></a>1. 导入模块</h3><h4 id="1-1-导入模块的方式"><a href="#1-1-导入模块的方式" class="headerlink" title="1.1 导入模块的方式"></a>1.1 导入模块的方式</h4><ul>
-<li>import 模块名</li>
-<li>import 模块名1, 模块名2（不建议使用，非PEP8规范）</li>
-<li>from 模块名 import 功能名</li>
-<li>from 模块名 import *</li>
-<li>import 模块名 as 别名</li>
-<li>from 模块名 import 功能名 as 别名</li>
-</ul>
-<h4 id="1-2-导入方式详解"><a href="#1-2-导入方式详解" class="headerlink" title="1.2 导入方式详解"></a>1.2 导入方式详解</h4><h5 id="1-2-1-import"><a href="#1-2-1-import" class="headerlink" title="1.2.1 import"></a>1.2.1 import</h5><ul>
-<li>语法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 导入模块</span></span><br><span class="line"><span class="keyword">import</span> 模块名</span><br><span class="line"><span class="keyword">import</span> 模块名<span class="number">1</span>, 模块名<span class="number">2.</span>..</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 调用功能</span></span><br><span class="line">模块名.功能名()</span><br><span class="line"><span class="number">123456</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>体验</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="built_in">print</span>(math.sqrt(<span class="number">9</span>))  <span class="comment"># 3.0</span></span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="1-2-2-from…import…"><a href="#1-2-2-from…import…" class="headerlink" title="1.2.2 from…import…"></a>1.2.2 from…import…</h5><ul>
-<li>语法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> 模块名 <span class="keyword">import</span> 功能<span class="number">1</span>, 功能<span class="number">2</span>, 功能<span class="number">3.</span>..</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>体验</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="built_in">print</span>(sqrt(<span class="number">9</span>))</span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="1-2-3-from…import"><a href="#1-2-3-from…import" class="headerlink" title="1.2.3 from…import *"></a>1.2.3 from…import *</h5><ul>
-<li>语法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> 模块名 <span class="keyword">import</span> *</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>体验</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> *</span><br><span class="line"><span class="built_in">print</span>(sqrt(<span class="number">9</span>))</span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="1-2-4-from…import"><a href="#1-2-4-from…import" class="headerlink" title="1.2.4 from…import *"></a>1.2.4 from…import *</h5><ul>
-<li>语法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 模块定义别名</span></span><br><span class="line"><span class="keyword">import</span> 模块名 <span class="keyword">as</span> 别名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 功能定义别名</span></span><br><span class="line"><span class="keyword">from</span> 模块名 <span class="keyword">import</span> 功能 <span class="keyword">as</span> 别名</span><br><span class="line"><span class="number">12345</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>体验</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 模块别名</span></span><br><span class="line"><span class="keyword">import</span> time <span class="keyword">as</span> tt</span><br><span class="line"></span><br><span class="line">tt.sleep(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 功能别名</span></span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep <span class="keyword">as</span> sl</span><br><span class="line">sl(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line"><span class="number">12345678910</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-制作模块"><a href="#2-制作模块" class="headerlink" title="2. 制作模块"></a>2. 制作模块</h3><p>在Python中，每个Python文件都可以作为一个模块，模块的名字就是文件的名字。<strong>也就是说自定义模块名必须要符合标识符命名规则。</strong></p>
-<h4 id="2-1-定义模块"><a href="#2-1-定义模块" class="headerlink" title="2.1 定义模块"></a>2.1 定义模块</h4><p>新建一个Python文件，命名为<code>my_module1.py</code>，并定义<code>testA</code>函数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">testA</span>(<span class="params">a, b</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(a + b)</span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-2-测试模块"><a href="#2-2-测试模块" class="headerlink" title="2.2 测试模块"></a>2.2 测试模块</h4><p>在实际开中，当一个开发人员编写完一个模块后，为了让模块能够在项目中达到想要的效果，这个开发人员会自行在py文件中添加一些测试信息.，例如，在<code>my_module1.py</code>文件中添加测试代码。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">testA</span>(<span class="params">a, b</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(a + b)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">testA(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line"><span class="number">12345</span></span><br></pre></td></tr></table></figure>
-
-<p>此时，无论是当前文件，还是其他已经导入了该模块的文件，在运行的时候都会自动执行<code>testA</code>函数的调用。</p>
-<p>解决办法如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">testA</span>(<span class="params">a, b</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(a + b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 只在当前文件中调用该函数，其他导入的文件内不符合该条件，则不执行testA函数调用</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    testA(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line"><span class="number">123456</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-3-调用模块"><a href="#2-3-调用模块" class="headerlink" title="2.3 调用模块"></a>2.3 调用模块</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> my_module1</span><br><span class="line">my_module1.testA(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-4-调用模块"><a href="#2-4-调用模块" class="headerlink" title="2.4 调用模块"></a>2.4 调用模块</h4><p>如果使用<code>from .. import ..</code>或<code>from .. import *</code>导入多个模块的时候，且模块内有同名功能。当调用这个同名功能的时候，调用到的是后面导入的模块的功能。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 模块1代码</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_test</span>(<span class="params">a, b</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(a + b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 模块2代码</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_test</span>(<span class="params">a, b</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(a - b)</span><br><span class="line">   </span><br><span class="line"><span class="comment"># 导入模块和调用功能代码</span></span><br><span class="line"><span class="keyword">from</span> my_module1 <span class="keyword">import</span> my_test</span><br><span class="line"><span class="keyword">from</span> my_module2 <span class="keyword">import</span> my_test</span><br><span class="line"></span><br><span class="line"><span class="comment"># my_test函数是模块2中的函数</span></span><br><span class="line">my_test(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line"><span class="number">1234567891011121314</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-模块定位顺序"><a href="#3-模块定位顺序" class="headerlink" title="3. 模块定位顺序"></a>3. 模块定位顺序</h3><p>当导入一个模块，Python解析器对模块位置的搜索顺序是：</p>
-<ol>
-<li>当前目录</li>
-<li>如果不在当前目录，Python则搜索在shell变量PYTHONPATH下的每个目录。</li>
-<li>如果都找不到，Python会察看默认路径。UNIX下，默认路径一般为/usr/local/lib/python/</li>
-</ol>
-<p>模块搜索路径存储在system模块的sys.path变量中。变量里包含当前目录，PYTHONPATH和由安装过程决定的默认目录。</p>
-<ul>
-<li>注意<ul>
-<li>自己的文件名不要和已有模块名重复，否则导致模块功能无法使用</li>
-<li><code>使用from 模块名 import 功能</code>的时候，如果功能名字重复，调用到的是最后定义或导入的功能。</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-all"><a href="#4-all" class="headerlink" title="4. __all__"></a>4. <code>__all__</code></h3><p>如果一个模块文件中有<code>__all__</code>变量，当使用<code>from xxx import *</code>导入时，只能导入这个列表中的元素。</p>
-<ul>
-<li>my_module1模块代码</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">__all__ = [<span class="string">&#x27;testA&#x27;</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">testA</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;testA&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">testB</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;testB&#x27;</span>)</span><br><span class="line"><span class="number">123456789</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>导入模块的文件代码</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> my_module1 <span class="keyword">import</span> *</span><br><span class="line">testA()</span><br><span class="line">testB()</span><br><span class="line"><span class="comment"># NameError: name &#x27;testB&#x27; is not defined</span></span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="六、包"><a href="#六、包" class="headerlink" title="六、包"></a>六、包</h2><p>包将有联系的模块组织在一起，即放到同一个文件夹下，并且在这个文件夹创建一个名字为<code>__init__.py</code> 文件，那么这个文件夹就称之为包。</p>
-<h3 id="1-制作包"><a href="#1-制作包" class="headerlink" title="1. 制作包"></a>1. 制作包</h3><p>[New] — [Python Package] — 输入包名 — [OK] — 新建功能模块(有联系的模块)。</p>
-<p>注意：新建包后，包内部会自动创建<code>__init__.py</code>文件，这个文件控制着包的导入行为。</p>
-<h4 id="1-1-快速体验"><a href="#1-1-快速体验" class="headerlink" title="1.1 快速体验"></a>1.1 快速体验</h4><ol>
-<li>新建包<code>mypackage</code></li>
-<li>新建包内模块：<code>my_module1</code> 和 <code>my_module2</code></li>
-<li>模块内代码如下</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># my_module1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">info_print1</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;my_module1&#x27;</span>)</span><br><span class="line"><span class="number">123456</span></span><br><span class="line"><span class="comment"># my_module2</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">info_print2</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;my_module2&#x27;</span>)</span><br><span class="line"><span class="number">123456</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="1-2-导入包"><a href="#1-2-导入包" class="headerlink" title="1.2 导入包"></a>1.2 导入包</h4><h5 id="1-2-1-方法一"><a href="#1-2-1-方法一" class="headerlink" title="1.2.1 方法一"></a>1.2.1 方法一</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> 包名.模块名</span><br><span class="line"></span><br><span class="line">包名.模块名.目标</span><br><span class="line"><span class="number">123</span></span><br><span class="line"><span class="keyword">import</span> my_package.my_module1</span><br><span class="line"></span><br><span class="line">my_package.my_module1.info_print1()</span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="1-2-2-方法二"><a href="#1-2-2-方法二" class="headerlink" title="1.2.2 方法二"></a>1.2.2 方法二</h5><p>注意：必须在<code>__init__.py</code>文件中添加<code>__all__ = []</code>，控制允许导入的模块列表。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> 包名 <span class="keyword">import</span> *</span><br><span class="line">模块名.目标</span><br><span class="line"><span class="number">12</span></span><br><span class="line"><span class="keyword">from</span> my_package <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">my_module1.info_print1()</span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="七、总结"><a href="#七、总结" class="headerlink" title="七、总结"></a>七、总结</h2><h3 id="1-异常"><a href="#1-异常" class="headerlink" title="1. 异常"></a>1. 异常</h3><ul>
-<li>异常语法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  	可能发生异常的代码</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">  	如果出现异常执行的代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  	没有异常执行的代码</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">  	无论是否异常都要执行的代码</span><br><span class="line"><span class="number">12345678</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>捕获异常</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">except</span> 异常类型:</span><br><span class="line">  	代码</span><br><span class="line"></span><br><span class="line"><span class="keyword">except</span> 异常类型 <span class="keyword">as</span> xx:</span><br><span class="line">		代码</span><br><span class="line"><span class="number">12345</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>自定义异常</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 自定义异常类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> 异常类类名(<span class="params">Exception</span>):</span></span><br><span class="line">  	代码</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 设置抛出异常的描述信息</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span>(<span class="params">self</span>):</span></span><br><span class="line">      <span class="keyword">return</span> ...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 抛出异常</span></span><br><span class="line"><span class="keyword">raise</span> 异常类名()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 捕获异常</span></span><br><span class="line"><span class="keyword">except</span> Exception...</span><br><span class="line"><span class="number">1234567891011121314</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-模块、包"><a href="#2-模块、包" class="headerlink" title="2. 模块、包"></a>2. 模块、包</h3><ul>
-<li>导入模块方法</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> 模块名</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> 模块名 <span class="keyword">import</span> 目标</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> 模块名 <span class="keyword">import</span> *</span><br><span class="line"><span class="number">12345</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>导入包</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> 包名.模块名</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> 包名 <span class="keyword">import</span> *</span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>__all__ = []</code> ：允许导入的模块或功能列表</li>
-</ul>
+                                                    草原最美的花 火红的萨日朗                                                        
+                                                    一梦到天涯遍地是花香                                                        
+                                                    流浪的人儿啊 心上有了她                                                        
+                                                    千里万里也会回头望                                                        
+                                                    草原最美的花 火红的萨日朗                                                        
+                                                    火一样热烈火一样奔放                                                        
+                                                    痴情的人儿啊 心上有了她                                                        
+                                                    有种幸福叫地久天长                                                        
+                                                    天下有多大 随他去宽广                                                        
+                                                    大路有多远 幸福有多长                                                        
+                                                    听惯了牧马人 悠扬的琴声                                                        
+                                                    爱上这水草丰美的牧场                                                        
+                                                    花开一抹红 尽情的怒放                                                        
+                                                    河流有多远 幸福有多长                                                        
+                                                    习惯了游牧人 自由的生活                                                        
+                                                    爱人在身边随处是天堂                                                        
+                                                    草原最美的花 火红的萨日朗                                                        
+                                                    一梦到天涯遍地是花香                                                        
+                                                    流浪的人儿啊 心上有了她                                                        
+                                                    千里万里也会回头望                                                        
+                                                    草原最美的花 火红的萨日朗                                                        
+                                                    火一样热烈火一样奔放                                                        
+                                                    痴情的人儿啊 心上有了她                                                        
+                                                    有种幸福叫地久天长                                                        
+                                                    天下有多大 随他去宽广                                                        
+                                                    大路有多远 幸福有多长                                                        
+                                                    听惯了牧马人 悠扬的琴声                                                        
+                                                    爱上这水草丰美的牧场                                                        
+                                                    花开一抹红 尽情的怒放                                                        
+                                                    河流有多远 幸福有多长                                                        
+                                                    习惯了游牧人 自由的生活                                                        
+                                                    爱人在身边随处是天堂                                                        
+                                                    草原最美的花 火红的萨日朗                                                        
+                                                    一梦到天涯遍地是花香                                                        
+                                                    流浪的人儿啊 心上有了她                                                        
+                                                    千里万里也会回头望                                                        
+                                                    草原最美的花 火红的萨日朗                                                        
+                                                    火一样热烈火一样奔放                                                        
+                                                    痴情的人儿啊 心上有了她                                                        
+                                                    有种幸福叫地久天长                                                        
+                                                    草原最美的花 火红的萨日朗                                                        
+                                                    火一样热烈火一样奔放                                                        
+                                                    痴情的人儿啊 心上有了她                                                        
+                                                    有种幸福叫地久天长                                                        
+</code></pre>
 
       </div>
       
@@ -954,7 +823,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/xfrl/2020/06/14/Python异常-模块-包/" target="_blank" title="Python-异常">https://xfrl.github.io/xfrl/2020/06/14/Python异常-模块-包/</a>
+    <a href="/xfrl/2021/08/19/萨日朗/" target="_blank" title="火红的萨日朗">https://xfrl.github.io/xfrl/2021/08/19/萨日朗/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -972,38 +841,21 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="https://img10.360buyimg.com/ddimg/jfs/t1/192716/16/15879/3772126/6103eac6E316ec69f/00e2b0f39da51c15.png" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/xfrl/2020/06/14/Python-%E5%87%BD%E6%95%B0%E7%AF%87%EF%BC%881%EF%BC%89/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> Prev:
-        <div>Python-函数篇（1）</div>
-      </div>
-      
-      <!-- <div class="content">
-        一. 函数的作用函数就是将一段具有独立功能的代码块 整合到一个整体并命名，在需要的位置调用这个名称即可完成对应的需求。
-
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="https://img13.360buyimg.com/ddimg/jfs/t1/183824/35/15593/2247696/60fcbf17Ed7ba682e/21bd8101c1a96998.png" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="https://img10.360buyimg.com/ddimg/jfs/t1/181839/8/14681/772267/60f2be83E768a212b/78b7bb21016a27b6.png" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/xfrl/2020/06/09/python%E5%9F%BA%E7%A1%80/" class="post-nav-link">
+    <a href="/xfrl/2021/07/15/Django/" class="post-nav-link">
       <div class="title">
         Next: <i class="fa fa-angle-right"></i>
-        <div>初遇Python</div>
+        <div>Django</div>
       </div>
       <!-- <div class="content">
-        Python基础语法介绍一、Python简介1. 了解PythonPython是一种解释型（这意味着开发过程中没有了编译
+        Django命令及配置切换到创建项目的目录  
+1cd C:\Users\admin\Desktop\DjangoPro
       </div> -->
     </a>
   </div>
